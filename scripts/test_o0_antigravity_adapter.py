@@ -265,8 +265,8 @@ class TestO0AntigravityAdapter(unittest.TestCase):
                 # Verify targeted scope directory
                 expected_dir_flag = f"--add-dir={src_dir.resolve()}"
                 self.assertIn(expected_dir_flag, agy_call)
-                # Ensure the root workspace was not added when specific scope exists
-                self.assertNotIn(f"--add-dir={self.workspace.resolve()}", agy_call)
+                # The repository root remains accessible alongside the focused scope.
+                self.assertIn(f"--add-dir={self.workspace.resolve()}", agy_call)
             finally:
                 os.chdir(old_cwd)
 
@@ -326,7 +326,7 @@ class TestO0AntigravityAdapter(unittest.TestCase):
 
         mock_subproc_run.side_effect = subproc_side_effect
 
-        # Test 1: IDEAS_STANDARD_MODEL_TIER=fast selects gemini-2.5-flash
+        # Test 1: IDEAS_STANDARD_MODEL_TIER=fast selects the configured flash model.
         env = {
             "IDEAS_STANDARD_REPORT": str(self.report_path),
             "IDEAS_STANDARD_TEST_CMD": f'"{sys.executable}" -c "print(\'tests passed\')"',
@@ -340,12 +340,11 @@ class TestO0AntigravityAdapter(unittest.TestCase):
                 ret = main()
                 self.assertEqual(0, ret)
                 agy_call = next(c for c in executed_commands if isinstance(c, list) and "agy.exe" in str(c[0]))
-                self.assertIn("--model=gemini-2.5-flash", agy_call)
+                self.assertIn("--model=gemini-3.8-flash-low", agy_call)
             finally:
                 os.chdir(old_cwd)
 
 
 if __name__ == "__main__":
     unittest.main()
-
 
