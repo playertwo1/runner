@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ideias-standard.local/schemas/audit-report.schema.json",
+  "title": "Ideias Standard Audit Report",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "executor_id", "role", "authority", "audit_result", "audited_sha", "summary", "findings", "checks", "residual_risks", "gate_registration"],
+  "properties": {
+    "schema_version": {"type": "string", "const": "0.1"},
+    "executor_id": {"type": "string", "minLength": 1},
+    "role": {"type": "string", "const": "AUDITOR"},
+    "authority": {"type": "string", "const": "INDEPENDENT_AUDIT"},
+    "audit_result": {"enum": ["PASS", "FAIL", "ESCALATE"]},
+    "audited_sha": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "summary": {"type": "string", "minLength": 1},
+    "escalation_reason": {"type": "string", "pattern": "\\S"},
+    "findings": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["id", "severity", "blocking", "files", "evidence", "problem", "violated_criterion", "resolution_condition"], "properties": {"id": {"type": "string", "minLength": 1}, "severity": {"enum": ["LOW", "MEDIUM", "HIGH", "CRITICAL"]}, "blocking": {"type": "boolean"}, "files": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}}, "evidence": {"$ref": "#/$defs/evidence_reference"}, "problem": {"type": "string", "minLength": 1}, "violated_criterion": {"type": "string", "minLength": 1}, "resolution_condition": {"type": "string", "minLength": 1}}}},
+    "checks": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["id", "status", "evidence"], "properties": {"id": {"type": "string", "minLength": 1}, "status": {"enum": ["PASS", "FAIL", "NOT_RUN", "NOT_APPLICABLE"]}, "evidence": {"$ref": "#/$defs/evidence_reference"}}}},
+    "residual_risks": {"type": "array", "items": {"type": "string", "minLength": 1}},
+    "gate_registration": {"type": "string", "const": "NOT_AUTHORIZED"}
+  },
+  "$defs": {"evidence_reference": {"type": "object", "additionalProperties": false, "required": ["evidence_id", "sha256"], "properties": {"evidence_id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,127}$"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}}},
+  "allOf": [
+    {
+      "if": {"properties": {"audit_result": {"const": "PASS"}}, "required": ["audit_result"]},
+      "then": {
+        "properties": {
+          "checks": {"not": {"contains": {"properties": {"status": {"enum": ["FAIL", "NOT_RUN"]}}, "required": ["status"]}}}
+        }
+      }
+    },
+    {
+      "if": {"properties": {"audit_result": {"const": "FAIL"}}, "required": ["audit_result"]},
+      "then": {"properties": {"findings": {"minItems": 1}}}
+    },
+    {
+      "if": {"properties": {"audit_result": {"const": "ESCALATE"}}, "required": ["audit_result"]},
+      "then": {"required": ["escalation_reason"]}
+    }
+  ]
+}

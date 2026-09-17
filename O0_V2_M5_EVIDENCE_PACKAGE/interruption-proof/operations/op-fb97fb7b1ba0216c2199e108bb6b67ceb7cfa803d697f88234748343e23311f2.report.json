@@ -1,0 +1,26 @@
+{
+  "schema_version": "0.1",
+  "executor_id": "antigravity-cli",
+  "role": "BUILDER",
+  "authority": "IMPLEMENTATION",
+  "result_sha": "c3897fde5fe6a6bca5d9a3b811a0d0f4ab79203f",
+  "result": "READY_FOR_AUDIT",
+  "summary": "Antigravity CLI completed task: In the active workspace, update calc.py to add function 'subtract(a: int, b: int) -> int' that returns a - b. In test_calc.py, add 'test_subtract' asserting subtract(10, 4) == 6. Run unit tests with '",
+  "changed_paths": [
+    "calc.py",
+    "test_calc.py"
+  ],
+  "checks": [
+    {
+      "id": "antigravity-build-and-test",
+      "status": "PASS",
+      "evidence": {
+        "evidence_id": "r0-builder-check-74275c9883ba2cb4",
+        "sha256": "85ed57648189fb2fd6612071f26af1c9a8a1e6fbc3e30d4134f183295347a96a"
+      }
+    }
+  ],
+  "limitations": [],
+  "disputed_findings": [],
+  "escalation": null
+}

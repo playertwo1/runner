@@ -1,0 +1,183 @@
+{
+  "actor_pids": [
+    13780,
+    21380,
+    28028,
+    35948,
+    39088
+  ],
+  "adversarial_coverage": {
+    "concurrency": true,
+    "duplicate_rejection": true,
+    "interruption": true,
+    "retry": true,
+    "timeout": true
+  },
+  "canonical_reports": [
+    {
+      "path": "reports/history/01-builder-report.json",
+      "sha256": "54db45e79c5bd4a879d156842a63c1b39f7279a67d78ef437d0f3753e694f4fb"
+    },
+    {
+      "path": "reports/history/02-audit-report.json",
+      "sha256": "80b11a30d5f2163da11cd3b385ee2bc8bbe9804542ead00624386b18d7ebb1c1"
+    }
+  ],
+  "concurrency_evidence": {
+    "concurrent_error_message": "RUNNER ERROR: Runner state lock is busy",
+    "concurrent_rejected_exit_code": 2,
+    "machine_state_after_primary": "WAITING_PRODUCT_AUTHORITY",
+    "primary_completed_exit_code": 0,
+    "primary_pid": 26156
+  },
+  "duplicate_evidence": {
+    "accepted_operations_count": 2,
+    "automation_stopped_preserved": true,
+    "duplicate_report_rejected": true,
+    "verified_report_sha256": "80b11a30d5f2163da11cd3b385ee2bc8bbe9804542ead00624386b18d7ebb1c1"
+  },
+  "evidence_references": [
+    {
+      "evidence_id": "r0-builder-check-f0718d1f9cedc23d",
+      "path": "reports/evidence/r0-builder-check-f0718d1f9cedc23d.json",
+      "sha256": "83c569bf044b24247c287a0cffdeed1c689eb657c932de30019237f04d19bc8d"
+    },
+    {
+      "evidence_id": "r1-audit-check-a95c259b3d446736",
+      "path": "reports/evidence/r1-audit-check-a95c259b3d446736.json",
+      "sha256": "9b9ad839a1613f0e31d03d2005f5ddafb7d3997cfafde68fc6d7234d2bf57112"
+    }
+  ],
+  "failure_references": [
+    {
+      "failure_id": "failure-318ee051c9a74e589a718407a42a0d1f",
+      "kind": "HANDOFF_REJECTED",
+      "path": "reports/runner-failures/failure-318ee051c9a74e589a718407a42a0d1f.json",
+      "sha256": "e403f8c56490544a8feb5cb3e35bd03db21cac2987af1b760fa5c81cd115f2f1"
+    },
+    {
+      "failure_id": "failure-32e1d89f7e5a4d88981a92858c02f6ee",
+      "kind": "HANDOFF_REJECTED",
+      "path": "reports/runner-failures/failure-32e1d89f7e5a4d88981a92858c02f6ee.json",
+      "sha256": "dd7ed794bd65c04a569509b400711b7983eb2c841d76d89f0578b5e84acaed9b"
+    },
+    {
+      "failure_id": "failure-4511292c64044740a98154c3e5f09e2e",
+      "kind": "TIMEOUT",
+      "path": "reports/runner-failures/failure-4511292c64044740a98154c3e5f09e2e.json",
+      "sha256": "18fc64cc18c9377c506332408ab874ab583d8b7c65d48c6653c305696083ccf6"
+    },
+    {
+      "failure_id": "failure-61ae5865d5ab4018b989bd5e6a20ac60",
+      "kind": "HANDOFF_REJECTED",
+      "path": "reports/runner-failures/failure-61ae5865d5ab4018b989bd5e6a20ac60.json",
+      "sha256": "41b2b9ae69afd354f7d042de7aece674a8664f2e14684d4629405ada68ca6dee"
+    },
+    {
+      "failure_id": "failure-ceb41181276a444d9846a22d71ba89c3",
+      "kind": "ACTOR_EXIT_NONZERO",
+      "path": "reports/runner-failures/failure-ceb41181276a444d9846a22d71ba89c3.json",
+      "sha256": "cf87ad7845dbd8cf74a50f4d94025869ba9e1b4395a3f02d842ec65d3ea1ee3d"
+    },
+    {
+      "failure_id": "failure-cff31134f92b459893c713fcfbc3efc3",
+      "kind": "HANDOFF_REJECTED",
+      "path": "reports/runner-failures/failure-cff31134f92b459893c713fcfbc3efc3.json",
+      "sha256": "63625f43821332e487a834379aad1a2d7895cf0251ccb329ac088bb9c0951900"
+    },
+    {
+      "failure_id": "failure-f25e5c5eb4144e2781ac0a65bdf24543",
+      "kind": "CANCELLED",
+      "path": "reports/runner-failures/failure-f25e5c5eb4144e2781ac0a65bdf24543.json",
+      "sha256": "4a28a4eb2b59745d569fce65ef5f6735f3cfb5430577ac6e31766490207773e8"
+    }
+  ],
+  "final_state": {
+    "approval": null,
+    "audit_round": 1,
+    "audit_target_sha": "76e12144f5aa2e5c32eaede222dddbc26ad19e39",
+    "builder_head_sha": "76e12144f5aa2e5c32eaede222dddbc26ad19e39",
+    "gate": "S1",
+    "human_gate_required": true,
+    "last_audit_result": "PASS",
+    "last_audited_sha": "76e12144f5aa2e5c32eaede222dddbc26ad19e39",
+    "machine_state": "WAITING_PRODUCT_AUTHORITY",
+    "max_audit_rounds": 3,
+    "next_actor": "PRODUCT_AUTHORITY",
+    "phase": "O0",
+    "run_id": "run-a86e43539817d47c55b28b44b6a8f45bfe58ecfd9f1b7308dc84c0ed8b06da33"
+  },
+  "interruption_evidence": {
+    "advanced_state": "READY_FOR_AUDIT",
+    "cancel_cleared_required": true,
+    "interruption_exit_code": 2,
+    "interruption_type": "CANCELLED",
+    "partial_report_discarded": true,
+    "resume_flag_required": true,
+    "resumed_success_exit_code": 0,
+    "state_preserved_without_advance": true
+  },
+  "journal_references": [
+    {
+      "interruption_reason": "TIMEOUT",
+      "path": "reports/history/01-timeout.journal.json",
+      "phase": "INTERRUPTED",
+      "sha256": "4cf34d6b687014c210b6c324b47115a3e2a8af68f1173f8abacef2f0e7bbd6af"
+    },
+    {
+      "interruption_reason": "CANCELLED",
+      "path": "reports/history/02-cancelled.journal.json",
+      "phase": "INTERRUPTED",
+      "sha256": "662bc80d6eb8478979d399b1cc20d1c6bc11555d3a77f2ddd847f67985f1f602"
+    }
+  ],
+  "package_root": "O0_C45_E2E_PACKAGE",
+  "retry_evidence": {
+    "actor_exit_code": 7,
+    "failure_record_kind": "ACTOR_EXIT_NONZERO",
+    "state_preserved": true,
+    "transient_failure_exit_code": 2
+  },
+  "scenario": "O0-C45-adversarial-e2e-cycle",
+  "schema_version": "0.1",
+  "steps": [
+    {
+      "approval": null,
+      "audit_round": 0,
+      "audit_target_sha": "76e12144f5aa2e5c32eaede222dddbc26ad19e39",
+      "builder_head_sha": "76e12144f5aa2e5c32eaede222dddbc26ad19e39",
+      "gate": "S1",
+      "human_gate_required": true,
+      "last_audit_result": null,
+      "last_audited_sha": null,
+      "machine_state": "READY_FOR_AUDIT",
+      "max_audit_rounds": 3,
+      "next_actor": "AUDITOR",
+      "phase": "O0",
+      "run_id": "run-a86e43539817d47c55b28b44b6a8f45bfe58ecfd9f1b7308dc84c0ed8b06da33"
+    },
+    {
+      "approval": null,
+      "audit_round": 1,
+      "audit_target_sha": "76e12144f5aa2e5c32eaede222dddbc26ad19e39",
+      "builder_head_sha": "76e12144f5aa2e5c32eaede222dddbc26ad19e39",
+      "gate": "S1",
+      "human_gate_required": true,
+      "last_audit_result": "PASS",
+      "last_audited_sha": "76e12144f5aa2e5c32eaede222dddbc26ad19e39",
+      "machine_state": "WAITING_PRODUCT_AUTHORITY",
+      "max_audit_rounds": 3,
+      "next_actor": "PRODUCT_AUTHORITY",
+      "phase": "O0",
+      "run_id": "run-a86e43539817d47c55b28b44b6a8f45bfe58ecfd9f1b7308dc84c0ed8b06da33"
+    }
+  ],
+  "timeout_evidence": {
+    "interruption_reason": "TIMEOUT",
+    "partial_report_discarded": true,
+    "resume_required": true,
+    "state_preserved": true,
+    "timeout_exit_code": 2,
+    "timeout_seconds": 0.25
+  }
+}

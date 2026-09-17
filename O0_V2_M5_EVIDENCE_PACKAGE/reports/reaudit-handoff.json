@@ -1,0 +1,76 @@
+{
+  "schema_version": "0.1",
+  "previous_audited_sha": "003d050af5186ad3efd39d729fc4ab3b888fd1a6",
+  "new_audit_target_sha": "d48a01e15f193dc7db21773bbe3dd794328ad238",
+  "audit_round": 1,
+  "context_mode": "FULL",
+  "full_context_reasons": [
+    "MATERIAL_RISK"
+  ],
+  "findings": [
+    {
+      "id": "CODEX-FINDING-001",
+      "severity": "HIGH",
+      "blocking": true,
+      "files": [
+        "."
+      ],
+      "evidence": {
+        "evidence_id": "r1-audit-finding-72814a4e78954a5f",
+        "sha256": "2b43cf0bdb036cc50ecaaf5f04ce7da155af24b6dfa01cacd6034d44fb571fcc"
+      },
+      "problem": "Blocking: calc.py returns a + b in multiply(a, b). For unequal operands, multiply(2, 3) returns 5 instead of 6.",
+      "violated_criterion": "Implementation or test correctness",
+      "resolution_condition": "Builder must fix the reported finding and produce a new SHA."
+    },
+    {
+      "id": "CODEX-FINDING-002",
+      "severity": "HIGH",
+      "blocking": true,
+      "files": [
+        "."
+      ],
+      "evidence": {
+        "evidence_id": "r1-audit-finding-e2e4a660e17d6aeb",
+        "sha256": "a1d3c1f856e86d4832dd3a3f38486390a337adf1ced3e46634cb5cbf0d58ecc0"
+      },
+      "problem": "test_calc.py tests multiply only with equal operands (2, 2), for which addition and multiplication both return 4. Add a test with unequal operands.",
+      "violated_criterion": "Implementation or test correctness",
+      "resolution_condition": "Builder must fix the reported finding and produce a new SHA."
+    }
+  ],
+  "changed_paths": [
+    "calc.py",
+    "test_calc.py"
+  ],
+  "declared_changed_paths": [
+    "calc.py",
+    "test_calc.py"
+  ],
+  "reusable_evidence": [
+    {
+      "check_id": "codex-check-1",
+      "status": "FAIL",
+      "evidence": {
+        "evidence_id": "r1-check-a2721e1cfb2fcb80",
+        "sha256": "8aab605176257edde8dffe5da470bb7fc43c89e957574ba0ede2f77f8921b594"
+      }
+    },
+    {
+      "check_id": "codex-check-2",
+      "status": "FAIL",
+      "evidence": {
+        "evidence_id": "r1-check-6d9e9460101b213d",
+        "sha256": "5aef0f4668f589b5d03ef5ad989c1a86cd5b10788fea131d168958ee0020665f"
+      }
+    },
+    {
+      "check_id": "codex-check-3",
+      "status": "FAIL",
+      "evidence": {
+        "evidence_id": "r1-check-e8cbfd1bff395170",
+        "sha256": "262a35bb09468dac69498eb268fdd074e6439d7a0dbb1cd118bbc30737ff1c3f"
+      }
+    }
+  ]
+}

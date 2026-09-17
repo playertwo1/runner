@@ -1,0 +1,26 @@
+{
+  "schema_version": "0.1",
+  "executor_id": "antigravity-cli",
+  "role": "BUILDER",
+  "authority": "IMPLEMENTATION",
+  "result_sha": "09b34e03c774009de69f761c3db8f69406a4ff1a",
+  "result": "READY_FOR_AUDIT",
+  "summary": "Antigravity CLI completed task: In the active workspace, add function 'multiply(a: int, b: int) -> int' in calc.py. For this initial round, implement it as addition 'return a + b' (intentional defect for auditor detection). In test_",
+  "changed_paths": [
+    "calc.py",
+    "test_calc.py"
+  ],
+  "checks": [
+    {
+      "id": "antigravity-build-and-test",
+      "status": "PASS",
+      "evidence": {
+        "evidence_id": "r0-builder-check-455954b4ca5ed6ba",
+        "sha256": "9afb6f46395c1f0c9631e441a2465890a9ecbcc383c630f6ff2efe6a2b25b51c"
+      }
+    }
+  ],
+  "limitations": [],
+  "disputed_findings": [],
+  "escalation": null
+}

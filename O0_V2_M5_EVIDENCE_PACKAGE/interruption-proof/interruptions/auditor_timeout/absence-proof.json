@@ -1,0 +1,9 @@
+{
+  "report_exists": false,
+  "report_path": "audit-report.json",
+  "reports_inventory": [
+    ".codex_tmp_c3897fde/auditor-schema.json",
+    "operations/op-e8fc3d32e21f2b7ae05799a5579e4a11716070ab44f9968f4c47918c9c70c737.journal.json",
+    "runner-failures/failure-4f970b180bb145ceb75ba30af03eb045.json"
+  ]
+}

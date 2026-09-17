@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ideias-standard.local/schemas/builder-findings.schema.json",
+  "title": "Ideias Standard Builder Findings Handoff",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["audit_target_sha", "audit_round", "findings"],
+  "properties": {
+    "audit_target_sha": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "audit_round": {"type": "integer", "minimum": 1},
+    "findings": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "severity", "blocking", "files", "evidence", "problem", "violated_criterion", "resolution_condition"],
+        "properties": {
+          "id": {"type": "string", "minLength": 1},
+          "severity": {"enum": ["LOW", "MEDIUM", "HIGH", "CRITICAL"]},
+          "blocking": {"type": "boolean"},
+          "files": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+          "evidence": {"$ref": "#/$defs/evidence_reference"},
+          "problem": {"type": "string", "minLength": 1},
+          "violated_criterion": {"type": "string", "minLength": 1},
+          "resolution_condition": {"type": "string", "minLength": 1}
+        }
+      }
+    }
+  },
+  "$defs": {
+    "evidence_reference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["evidence_id", "sha256"],
+      "properties": {
+        "evidence_id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,127}$"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    }
+  }
+}

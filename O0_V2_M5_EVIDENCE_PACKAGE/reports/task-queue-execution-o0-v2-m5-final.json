@@ -1,0 +1,45 @@
+{
+  "schema_version": "0.1",
+  "queue_path": "C:\\Users\\fael\\AppData\\Local\\Temp\\o0-v2-m5-work\\queue.json",
+  "invocation_id": "o0-v2-m5-final",
+  "phase": "O0",
+  "total_tasks": 2,
+  "executed_tasks": [
+    {
+      "task_id": "known-defect",
+      "run_id": "run-e706c725cc592ad75840dc28bbf77427cdf97bed92c977a4b71e2048de6a616d",
+      "goal": "Detect and correct multiply defect",
+      "scope": [
+        "calc.py",
+        "test_calc.py"
+      ],
+      "machine_state": "WAITING_PRODUCT_AUTHORITY",
+      "last_audit_result": "PASS",
+      "last_audited_sha": "d48a01e15f193dc7db21773bbe3dd794328ad238",
+      "audit_round": 2,
+      "approval": null
+    },
+    {
+      "task_id": "authorized-second-task",
+      "run_id": "run-97973bd215003ae5c5b33c1c4301081cc561c2e0b5576185ca63b2ace612dc00",
+      "goal": "Implement subtract",
+      "scope": [
+        "calc.py",
+        "test_calc.py"
+      ],
+      "machine_state": "WAITING_PRODUCT_AUTHORITY",
+      "last_audit_result": "PASS",
+      "last_audited_sha": "eb11e1ddcf07b415201cdd49ee81d3b416bd2c6b",
+      "audit_round": 1,
+      "approval": null
+    }
+  ],
+  "results": [
+    "known-defect",
+    "authorized-second-task"
+  ],
+  "status": "COMPLETED",
+  "stop_reason": null,
+  "active_task_index": null,
+  "active_task_id": null
+}

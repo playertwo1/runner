@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ideias-standard.local/schemas/operation-journal.schema.json",
+  "title": "Ideias Standard Operation Recovery Journal",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "operation_id", "source", "source_state", "actor", "phase", "report_path", "report_sha256", "result"],
+  "properties": {
+    "schema_version": {"type": "string", "const": "0.1"},
+    "operation_id": {"type": "string", "pattern": "^op-[0-9a-f]{64}$"},
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["run_id", "machine_state", "actor", "audit_round", "builder_head_sha", "audit_target_sha", "last_audited_sha"],
+      "properties": {
+        "run_id": {"type": "string", "pattern": "^run-[0-9a-f]{64}$"},
+        "machine_state": {"enum": ["READY_FOR_BUILD", "READY_FOR_AUDIT", "AUDITING", "FIX_REQUIRED", "WAITING_PRODUCT_AUTHORITY", "GATE_APPROVED", "BLOCKED"]},
+        "actor": {"enum": ["BUILDER", "AUDITOR"]},
+        "audit_round": {"type": "integer", "minimum": 0},
+        "builder_head_sha": {"anyOf": [{"type": "null"}, {"type": "string", "pattern": "^[0-9a-f]{40}$"}]},
+        "audit_target_sha": {"anyOf": [{"type": "null"}, {"type": "string", "pattern": "^[0-9a-f]{40}$"}]},
+        "last_audited_sha": {"anyOf": [{"type": "null"}, {"type": "string", "pattern": "^[0-9a-f]{40}$"}]}
+      }
+    },
+    "source_state": {"type": "object"},
+    "actor": {"enum": ["BUILDER", "AUDITOR"]},
+    "phase": {"enum": ["PREPARED", "REPORT_READY", "INTERRUPTED"]},
+    "report_path": {"type": "string", "minLength": 1},
+    "report_sha256": {"anyOf": [{"type": "null"}, {"type": "string", "pattern": "^[0-9a-f]{64}$"}]},
+    "result": {"anyOf": [{"type": "null"}, {"type": "object"}]},
+    "interruption_reason": {"anyOf": [{"type": "null"}, {"enum": ["TIMEOUT", "CANCELLED"]}]}
+  }
+}

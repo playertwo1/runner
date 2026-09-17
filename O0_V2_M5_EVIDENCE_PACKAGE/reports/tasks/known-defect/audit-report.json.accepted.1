@@ -1,0 +1,69 @@
+{
+  "schema_version": "0.1",
+  "executor_id": "codex-cli",
+  "role": "AUDITOR",
+  "authority": "INDEPENDENT_AUDIT",
+  "audit_result": "FAIL",
+  "audited_sha": "003d050af5186ad3efd39d729fc4ab3b888fd1a6",
+  "summary": "multiply uses addition instead of multiplication, and the test does not catch it.",
+  "findings": [
+    {
+      "id": "CODEX-FINDING-001",
+      "severity": "HIGH",
+      "blocking": true,
+      "files": [
+        "."
+      ],
+      "evidence": {
+        "evidence_id": "r1-audit-finding-72814a4e78954a5f",
+        "sha256": "2b43cf0bdb036cc50ecaaf5f04ce7da155af24b6dfa01cacd6034d44fb571fcc"
+      },
+      "problem": "Blocking: calc.py returns a + b in multiply(a, b). For unequal operands, multiply(2, 3) returns 5 instead of 6.",
+      "violated_criterion": "Implementation or test correctness",
+      "resolution_condition": "Builder must fix the reported finding and produce a new SHA."
+    },
+    {
+      "id": "CODEX-FINDING-002",
+      "severity": "HIGH",
+      "blocking": true,
+      "files": [
+        "."
+      ],
+      "evidence": {
+        "evidence_id": "r1-audit-finding-e2e4a660e17d6aeb",
+        "sha256": "a1d3c1f856e86d4832dd3a3f38486390a337adf1ced3e46634cb5cbf0d58ecc0"
+      },
+      "problem": "test_calc.py tests multiply only with equal operands (2, 2), for which addition and multiplication both return 4. Add a test with unequal operands.",
+      "violated_criterion": "Implementation or test correctness",
+      "resolution_condition": "Builder must fix the reported finding and produce a new SHA."
+    }
+  ],
+  "checks": [
+    {
+      "id": "codex-check-1",
+      "status": "FAIL",
+      "evidence": {
+        "evidence_id": "r1-audit-check-26f63cb89c038b84",
+        "sha256": "0a9db507d796ebf5620637e9a276746c34dd983aa7707e6f3d68915f1492bb9c"
+      }
+    },
+    {
+      "id": "codex-check-2",
+      "status": "FAIL",
+      "evidence": {
+        "evidence_id": "r1-audit-check-87042663651dbd16",
+        "sha256": "e4b86f9d195262c0eee795a9d380359a54566101320ad9eabe44a0d8d8eb9e48"
+      }
+    },
+    {
+      "id": "codex-check-3",
+      "status": "FAIL",
+      "evidence": {
+        "evidence_id": "r1-audit-check-553b5432ca847e7b",
+        "sha256": "97860c84277f1536714ba3b3aa994f4167b3ab6bed86504e7e1020c51129c679"
+      }
+    }
+  ],
+  "residual_risks": [],
+  "gate_registration": "NOT_AUTHORIZED"
+}

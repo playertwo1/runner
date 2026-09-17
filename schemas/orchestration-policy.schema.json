@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ideias-standard.local/schemas/orchestration-policy.schema.json",
+  "title": "Ideias Standard Orchestration Policy",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "id", "builder_role_id", "auditor_role_id", "product_authority_id", "max_audit_rounds", "immutable_audit_target", "auditor_write_access", "human_gate_required", "auto_advance_after_audit", "persist_handoffs"],
+  "properties": {
+    "schema_version": {"type": "string", "const": "0.1"},
+    "id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$"},
+    "builder_role_id": {"type": "string", "minLength": 1},
+    "auditor_role_id": {"type": "string", "minLength": 1},
+    "product_authority_id": {"type": "string", "minLength": 1},
+    "max_audit_rounds": {"type": "integer", "minimum": 1, "maximum": 10},
+    "immutable_audit_target": {"type": "boolean", "const": true},
+    "auditor_write_access": {"type": "boolean", "const": false},
+    "human_gate_required": {"type": "boolean", "const": true},
+    "auto_advance_after_audit": {"type": "boolean", "const": false},
+    "persist_handoffs": {"type": "boolean", "const": true}
+  }
+}

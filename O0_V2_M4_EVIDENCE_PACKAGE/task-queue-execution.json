@@ -1,0 +1,43 @@
+{
+  "schema_version": "0.1",
+  "queue_path": "C:\\Users\\fael\\AppData\\Local\\Temp\\o0_v2_m4_work\\task-queue.json",
+  "invocation_id": null,
+  "phase": "O0",
+  "total_tasks": 2,
+  "executed_tasks": [
+    {
+      "task_id": "task-01-subtract",
+      "run_id": "run-b49a698a2bf0f7c1f55a469ceb3bbe99367b540bcf95d2cf4a9bf0bf0de8c878",
+      "goal": "Implement subtract(a, b) in calc.py and unit tests in test_calc.py",
+      "scope": [
+        "calc.py",
+        "test_calc.py"
+      ],
+      "machine_state": "WAITING_PRODUCT_AUTHORITY",
+      "last_audit_result": "PASS",
+      "last_audited_sha": "4636c6d710c73080172e4acafc3d2381b0fd3043",
+      "audit_round": 1,
+      "approval": null
+    },
+    {
+      "task_id": "task-02-multiply",
+      "run_id": "run-a204cbe5ab562574f197b71d5ecce1337f7749dabb1d4d016fe0a6935c31e8a5",
+      "goal": "Implement multiply(a, b) in calc.py and unit tests in test_calc.py",
+      "scope": [
+        "calc.py",
+        "test_calc.py"
+      ],
+      "machine_state": "WAITING_PRODUCT_AUTHORITY",
+      "last_audit_result": "PASS",
+      "last_audited_sha": "4beaaaaf0bf0800e829cc5dbd00088943d1575ed",
+      "audit_round": 1,
+      "approval": null
+    }
+  ],
+  "results": [
+    "task-01-subtract",
+    "task-02-multiply"
+  ],
+  "status": "COMPLETED",
+  "stop_reason": null
+}

@@ -1,0 +1,46 @@
+{
+  "schema_version": "0.1",
+  "executor_id": "codex-cli",
+  "role": "AUDITOR",
+  "authority": "INDEPENDENT_AUDIT",
+  "audit_result": "PASS",
+  "audited_sha": "d360c36033f3afc8b3210c861d9013223fefdf0a",
+  "summary": "Reaudit passed; the previous multiplication defect is corrected.",
+  "findings": [],
+  "checks": [
+    {
+      "id": "codex-check-1",
+      "status": "PASS",
+      "evidence": {
+        "evidence_id": "r2-audit-check-b03a773108a066e8",
+        "sha256": "feecdb1d9fe00f2a9c5d32d19bad7fab14615a7642cffb14be4713248e24b1f8"
+      }
+    },
+    {
+      "id": "codex-check-2",
+      "status": "PASS",
+      "evidence": {
+        "evidence_id": "r2-audit-check-e9473ee62e029250",
+        "sha256": "9f8e3874f170b5a763cb1b3cc44338f34d5f20efd3ec7ea7747c555282c89aa6"
+      }
+    },
+    {
+      "id": "codex-check-3",
+      "status": "PASS",
+      "evidence": {
+        "evidence_id": "r2-audit-check-6e8ca006b146e100",
+        "sha256": "aed6a4412549ec3d87584fd2441c16d43da95ccffb776a5e9e4a8ed0aa6513a8"
+      }
+    },
+    {
+      "id": "codex-check-4",
+      "status": "PASS",
+      "evidence": {
+        "evidence_id": "r2-audit-check-21ed7fa774aeaad5",
+        "sha256": "2b54f0570a182141c7935c596c4b008c4885bfceef2a3e23ec97fa0cb615339c"
+      }
+    }
+  ],
+  "residual_risks": [],
+  "gate_registration": "NOT_AUTHORIZED"
+}

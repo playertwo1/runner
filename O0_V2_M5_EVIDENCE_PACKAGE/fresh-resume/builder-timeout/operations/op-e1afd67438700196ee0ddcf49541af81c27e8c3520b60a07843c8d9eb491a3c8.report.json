@@ -1,0 +1,26 @@
+{
+  "schema_version": "0.1",
+  "executor_id": "antigravity-cli",
+  "role": "BUILDER",
+  "authority": "IMPLEMENTATION",
+  "result_sha": "e4dffa9df3fe5429aefd47b5457aa2a69029532b",
+  "result": "READY_FOR_AUDIT",
+  "summary": "Antigravity CLI completed task: Add modulo(a,b) returning a % b to calc.py; add test modulo(10,3)==1; run tests and commit.",
+  "changed_paths": [
+    "calc.py",
+    "test_calc.py"
+  ],
+  "checks": [
+    {
+      "id": "antigravity-build-and-test",
+      "status": "PASS",
+      "evidence": {
+        "evidence_id": "r0-builder-check-c5866a1691fc7f26",
+        "sha256": "a06a91ea2ae9760fc36d2625a0f3b671258f7c2ec634c53c85ab97eb8beaa8b1"
+      }
+    }
+  ],
+  "limitations": [],
+  "disputed_findings": [],
+  "escalation": null
+}

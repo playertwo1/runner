@@ -1,0 +1,1 @@
+{"audit_round":1,"audit_target_sha":"003d050af5186ad3efd39d729fc4ab3b888fd1a6","content":"Codex reported finding: Blocking: calc.py returns a + b in multiply(a, b). For unequal operands, multiply(2, 3) returns 5 instead of 6.","evidence_id":"r1-audit-finding-72814a4e78954a5f","run_id":"run-e706c725cc592ad75840dc28bbf77427cdf97bed92c977a4b71e2048de6a616d","schema_version":"0.1"}

@@ -1,0 +1,8 @@
+[
+  {
+    "pid": "26416",
+    "exit_code": 0,
+    "stdout": "\u00c3\u0160XITO: o processo com PID 672 (processo filho de PID 25716) foi finalizado.\n\u00c3\u0160XITO: o processo com PID 25716 (processo filho de PID 30000) foi finalizado.\n\u00c3\u0160XITO: o processo com PID 30000 (processo filho de PID 26416) foi finalizado.\n\u00c3\u0160XITO: o processo com PID 26416 (processo filho de PID 29048) foi finalizado.\n",
+    "stderr": ""
+  }
+]

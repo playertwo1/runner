@@ -1,0 +1,54 @@
+{
+  "schema_version": "0.1",
+  "executor_id": "codex-cli",
+  "role": "AUDITOR",
+  "authority": "INDEPENDENT_AUDIT",
+  "audit_result": "PASS",
+  "audited_sha": "ccc07302d508194cbd5885e2dd3fc8718d1d7127",
+  "summary": "subtract(a, b) and test_subtract are correctly implemented, and all tests pass.",
+  "findings": [],
+  "checks": [
+    {
+      "id": "codex-check-1",
+      "status": "PASS",
+      "evidence": {
+        "evidence_id": "r1-audit-check-aa21a8ec66b78d38",
+        "sha256": "a0e70634e810da2f2cd44d7299fe16258cf13c2fc3d21e51129bbc6b1653e314"
+      }
+    },
+    {
+      "id": "codex-check-2",
+      "status": "PASS",
+      "evidence": {
+        "evidence_id": "r1-audit-check-9e92a730cab2caf9",
+        "sha256": "4723e313a81d7941d60d3efcc24da75e13f936378646da269f3da3a78436dee9"
+      }
+    },
+    {
+      "id": "codex-check-3",
+      "status": "PASS",
+      "evidence": {
+        "evidence_id": "r1-audit-check-01d8d52c921de41c",
+        "sha256": "6da9844cded5c309e564f740dd71aebcfe702ef4316d34fde3abead8f3b5aba6"
+      }
+    },
+    {
+      "id": "codex-check-4",
+      "status": "PASS",
+      "evidence": {
+        "evidence_id": "r1-audit-check-69bf15b84e4d8446",
+        "sha256": "f749801d947d92e453854e65ff2381f5e085408a76820a43aa0ba06f5b3400bb"
+      }
+    },
+    {
+      "id": "codex-check-5",
+      "status": "PASS",
+      "evidence": {
+        "evidence_id": "r1-audit-check-1d0d51085f0219f4",
+        "sha256": "aeea39cdb7e451739b7f41f5a96c389fc6a3763a66b696bac16de7aa145a02e2"
+      }
+    }
+  ],
+  "residual_risks": [],
+  "gate_registration": "NOT_AUTHORIZED"
+}

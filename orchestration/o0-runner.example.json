@@ -1,0 +1,9 @@
+{
+  "repository": "..",
+  "state_path": "orchestrator-state.json",
+  "reports_dir": "handoffs",
+  "builder_workspace": "../builder-workspace",
+  "audit_workspaces": "../audit-workspaces",
+  "builder_command": ["provider-runner", "builder"],
+  "auditor_command": ["provider-runner", "auditor"]
+}

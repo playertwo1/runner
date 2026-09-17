@@ -1,0 +1,157 @@
+{
+  "actor_process_ids": [
+    530,
+    542,
+    546,
+    560
+  ],
+  "audit_workspace_root": "audit-workspaces",
+  "audit_workspaces": [
+    {
+      "head_sha": "77ead7d1a0b587a45c028654c900906df4244c7d",
+      "path": "audit-workspaces/77ead7d1a0b587a45c028654c900906df4244c7d"
+    },
+    {
+      "head_sha": "082bdd575665bcd70ee8e260842a2ed9b90a5328",
+      "path": "audit-workspaces/082bdd575665bcd70ee8e260842a2ed9b90a5328"
+    }
+  ],
+  "builder_workspace": "builder-workspace",
+  "canonical_reports": [
+    {
+      "path": "reports/history/01-builder-report.json",
+      "sha256": "64954749a35b06d68962ccc180b74fdc49f0b054a7a69a43c9a7e4f57c429d97"
+    },
+    {
+      "path": "reports/history/02-audit-report.json",
+      "sha256": "f6afaba3794618a9096b4f7a60f2e1fea87a9a602457b554e7671e940abcb952"
+    },
+    {
+      "path": "reports/history/03-builder-report.json",
+      "sha256": "b6277570f2586bdb7292d9f6f39c058e448deb9879e685ef55ac462638c29341"
+    },
+    {
+      "path": "reports/history/04-audit-report.json",
+      "sha256": "7f24732f2151b82cc7ba016e251b176c73a75e6fbf7c36e0411cfd039ff28fb1"
+    }
+  ],
+  "corrected_sha": "082bdd575665bcd70ee8e260842a2ed9b90a5328",
+  "evidence_references": [
+    {
+      "evidence_id": "r0-builder-check-9c3aef513cdaafc1",
+      "path": "reports/evidence/r0-builder-check-9c3aef513cdaafc1.json",
+      "sha256": "d9dc8a69512382beeaf1829adffac0ba3253013feb371771050fe8b088aa3f5c"
+    },
+    {
+      "evidence_id": "r1-audit-check-7e113f165668c0e4",
+      "path": "reports/evidence/r1-audit-check-7e113f165668c0e4.json",
+      "sha256": "19056909919f668564734e61ba6129522bb9929ebc74eec8d41884677b3b2317"
+    },
+    {
+      "evidence_id": "r1-audit-finding-02490a2b3db576e8",
+      "path": "reports/evidence/r1-audit-finding-02490a2b3db576e8.json",
+      "sha256": "d80751c33f3ef60f74072b4f9bf6f8a425919f780302b614154464b835df9b05"
+    },
+    {
+      "evidence_id": "r1-builder-check-3c3a6c49ad944d26",
+      "path": "reports/evidence/r1-builder-check-3c3a6c49ad944d26.json",
+      "sha256": "d31db84a00021a9570b286027ca0ad2b85313ed1371e29fe272836424e451a8a"
+    },
+    {
+      "evidence_id": "r1-check-a56ac3878c769898",
+      "path": "reports/evidence/r1-check-a56ac3878c769898.json",
+      "sha256": "67845ca6685a76f1d6d4a5da2430504a392aa136536e8b06de7565173509cce3"
+    },
+    {
+      "evidence_id": "r2-audit-check-37b9ae18aac71aa7",
+      "path": "reports/evidence/r2-audit-check-37b9ae18aac71aa7.json",
+      "sha256": "25bee51318cf24b80ddb47b6708905b35f98c3563a81061eea2f5a921d7c8955"
+    }
+  ],
+  "final_state": {
+    "approval": null,
+    "audit_round": 2,
+    "audit_target_sha": "082bdd575665bcd70ee8e260842a2ed9b90a5328",
+    "builder_head_sha": "082bdd575665bcd70ee8e260842a2ed9b90a5328",
+    "gate": "S1",
+    "human_gate_required": true,
+    "last_audit_result": "PASS",
+    "last_audited_sha": "082bdd575665bcd70ee8e260842a2ed9b90a5328",
+    "machine_state": "WAITING_PRODUCT_AUTHORITY",
+    "max_audit_rounds": 3,
+    "next_actor": "PRODUCT_AUTHORITY",
+    "phase": "O0",
+    "run_id": "run-4b613e613420e13de1c904dd4324ce63071e69b8a769d365b52fef7387f5e374"
+  },
+  "initial_sha": "77ead7d1a0b587a45c028654c900906df4244c7d",
+  "runner_process_ids": [
+    529,
+    537,
+    545,
+    554
+  ],
+  "scenario": "O0-C38-real-basic-cycle",
+  "schema_version": "0.1",
+  "steps": [
+    {
+      "approval": null,
+      "audit_round": 0,
+      "audit_target_sha": "77ead7d1a0b587a45c028654c900906df4244c7d",
+      "builder_head_sha": "77ead7d1a0b587a45c028654c900906df4244c7d",
+      "gate": "S1",
+      "human_gate_required": true,
+      "last_audit_result": null,
+      "last_audited_sha": null,
+      "machine_state": "READY_FOR_AUDIT",
+      "max_audit_rounds": 3,
+      "next_actor": "AUDITOR",
+      "phase": "O0",
+      "run_id": "run-4b613e613420e13de1c904dd4324ce63071e69b8a769d365b52fef7387f5e374"
+    },
+    {
+      "approval": null,
+      "audit_round": 1,
+      "audit_target_sha": "77ead7d1a0b587a45c028654c900906df4244c7d",
+      "builder_head_sha": "77ead7d1a0b587a45c028654c900906df4244c7d",
+      "gate": "S1",
+      "human_gate_required": true,
+      "last_audit_result": "FAIL",
+      "last_audited_sha": "77ead7d1a0b587a45c028654c900906df4244c7d",
+      "machine_state": "FIX_REQUIRED",
+      "max_audit_rounds": 3,
+      "next_actor": "BUILDER",
+      "phase": "O0",
+      "run_id": "run-4b613e613420e13de1c904dd4324ce63071e69b8a769d365b52fef7387f5e374"
+    },
+    {
+      "approval": null,
+      "audit_round": 1,
+      "audit_target_sha": "082bdd575665bcd70ee8e260842a2ed9b90a5328",
+      "builder_head_sha": "082bdd575665bcd70ee8e260842a2ed9b90a5328",
+      "gate": "S1",
+      "human_gate_required": true,
+      "last_audit_result": null,
+      "last_audited_sha": null,
+      "machine_state": "READY_FOR_AUDIT",
+      "max_audit_rounds": 3,
+      "next_actor": "AUDITOR",
+      "phase": "O0",
+      "run_id": "run-4b613e613420e13de1c904dd4324ce63071e69b8a769d365b52fef7387f5e374"
+    },
+    {
+      "approval": null,
+      "audit_round": 2,
+      "audit_target_sha": "082bdd575665bcd70ee8e260842a2ed9b90a5328",
+      "builder_head_sha": "082bdd575665bcd70ee8e260842a2ed9b90a5328",
+      "gate": "S1",
+      "human_gate_required": true,
+      "last_audit_result": "PASS",
+      "last_audited_sha": "082bdd575665bcd70ee8e260842a2ed9b90a5328",
+      "machine_state": "WAITING_PRODUCT_AUTHORITY",
+      "max_audit_rounds": 3,
+      "next_actor": "PRODUCT_AUTHORITY",
+      "phase": "O0",
+      "run_id": "run-4b613e613420e13de1c904dd4324ce63071e69b8a769d365b52fef7387f5e374"
+    }
+  ]
+}

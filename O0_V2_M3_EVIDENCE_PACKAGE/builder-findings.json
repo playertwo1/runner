@@ -1,0 +1,21 @@
+{
+  "audit_target_sha": "09b34e03c774009de69f761c3db8f69406a4ff1a",
+  "audit_round": 1,
+  "findings": [
+    {
+      "id": "CODEX-FINDING-001",
+      "severity": "HIGH",
+      "blocking": true,
+      "files": [
+        "."
+      ],
+      "evidence": {
+        "evidence_id": "r1-audit-finding-121fd20817113e28",
+        "sha256": "a6aa2b99a9d01def8a408854d765e3476bf955f0b9079099c1dd027956c3ab76"
+      },
+      "problem": "multiply function implements addition (a + b) instead of multiplication (a * b)",
+      "violated_criterion": "Implementation or test correctness",
+      "resolution_condition": "Builder must fix the reported finding and produce a new SHA."
+    }
+  ]
+}

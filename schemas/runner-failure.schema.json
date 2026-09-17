@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ideias-standard.local/schemas/runner-failure.schema.json",
+  "title": "Ideias Standard Runner Failure Evidence",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "failure_id", "kind", "runner_exit_code", "actor_exit_code", "run_id", "operation_id", "machine_state", "state_sha256"],
+  "properties": {
+    "schema_version": {"const": "0.1"},
+    "failure_id": {"type": "string", "pattern": "^failure-[0-9a-f]{32}$"},
+    "kind": {"enum": ["ACTOR_EXIT_NONZERO", "TIMEOUT", "CANCELLED", "INVALID_JSON", "HANDOFF_REJECTED", "IO_ERROR", "INTERNAL_ERROR"]},
+    "runner_exit_code": {"const": 2},
+    "actor_exit_code": {"type": ["integer", "null"]},
+    "run_id": {"anyOf": [{"type": "null"}, {"type": "string", "pattern": "^run-[0-9a-f]{64}$"}]},
+    "operation_id": {"anyOf": [{"type": "null"}, {"type": "string", "pattern": "^op-[0-9a-f]{64}$"}]},
+    "machine_state": {"anyOf": [{"type": "null"}, {"enum": ["READY_FOR_BUILD", "READY_FOR_AUDIT", "AUDITING", "FIX_REQUIRED", "WAITING_PRODUCT_AUTHORITY", "GATE_APPROVED", "BLOCKED"]}]},
+    "state_sha256": {"anyOf": [{"type": "null"}, {"type": "string", "pattern": "^[0-9a-f]{64}$"}]}
+  }
+}

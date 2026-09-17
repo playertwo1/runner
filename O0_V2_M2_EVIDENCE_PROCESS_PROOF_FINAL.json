@@ -1,0 +1,365 @@
+{
+  "schema_version": "0.1",
+  "scenario": "O0-v2-M2-runner-adapters",
+  "acceptance_criteria": {
+    "adapters_connected_to_runner": true,
+    "explicit_workspace_and_task": true,
+    "canonical_builder_report_accepted": true,
+    "canonical_audit_report_accepted": true,
+    "schema_validation_enforced": true,
+    "sha_verification_enforced": true,
+    "evidence_canonicalized_and_referenced": true,
+    "audit_checkout_immutable": true,
+    "no_human_intervention_in_cycle": true,
+    "no_gate_approval_registered": true,
+    "stops_at_waiting_product_authority": true,
+    "self_sufficient_builder_bundle": true,
+    "bundle_clonable_isolated": true,
+    "real_cli_timeout_terminates_child": true,
+    "real_cli_cancellation_terminates_child": true,
+    "no_partial_report_or_state_advance": true
+  },
+  "runner_execution": {
+    "config_path": "runner-config.json",
+    "builder": {
+      "adapter": "o0_antigravity_adapter.py",
+      "executor_id": "antigravity-cli",
+      "duration_seconds": 21.23,
+      "base_sha": "252bf8aad4209fe60ac0cf3054249b0e3af0350e",
+      "produced_sha": "c3897fde5fe6a6bca5d9a3b811a0d0f4ab79203f",
+      "changed_paths": [
+        "calc.py",
+        "test_calc.py"
+      ],
+      "checks": [
+        {
+          "id": "antigravity-build-and-test",
+          "status": "PASS",
+          "evidence": {
+            "evidence_id": "r0-builder-check-74275c9883ba2cb4",
+            "sha256": "85ed57648189fb2fd6612071f26af1c9a8a1e6fbc3e30d4134f183295347a96a"
+          }
+        }
+      ]
+    },
+    "auditor": {
+      "adapter": "o0_codex_adapter.py",
+      "executor_id": "codex-cli",
+      "duration_seconds": 21.19,
+      "audited_sha": "c3897fde5fe6a6bca5d9a3b811a0d0f4ab79203f",
+      "audit_result": "PASS",
+      "checks": [
+        {
+          "id": "codex-check-1",
+          "status": "PASS",
+          "evidence": {
+            "evidence_id": "r1-audit-check-f8b4bbb017daf363",
+            "sha256": "f8a46ff142a9cef1bd900e0637f795e77ab4e148d7ab5e3a2fbb2aa99a1a7f9c"
+          }
+        },
+        {
+          "id": "codex-check-2",
+          "status": "PASS",
+          "evidence": {
+            "evidence_id": "r1-audit-check-9ec33e7885028dce",
+            "sha256": "6d5e199c8e8b6916e5c7af3f5bdfe87a9798f407e3b83b2dbf800b64b15de751"
+          }
+        },
+        {
+          "id": "codex-check-3",
+          "status": "PASS",
+          "evidence": {
+            "evidence_id": "r1-audit-check-f2519ac77587ba40",
+            "sha256": "88697e112978ea68e9cd4390a92145a744082386b7eec8eb83c183979dba3589"
+          }
+        }
+      ],
+      "findings": []
+    },
+    "final_state": {
+      "machine_state": "WAITING_PRODUCT_AUTHORITY",
+      "next_actor": "PRODUCT_AUTHORITY",
+      "audit_round": 1,
+      "last_audit_result": "PASS",
+      "approval": null,
+      "human_gate_required": true
+    },
+    "interruption_proofs": {
+      "builder_timeout": {
+        "actor_role": "BUILDER",
+        "mode": "timeout",
+        "duration_seconds": 3.45,
+        "interrupted_reason": "TIMEOUT",
+        "expected_reason": "TIMEOUT",
+        "child_pid": 19560,
+        "observed_tree_pids_before": [
+          3716,
+          3728,
+          4368,
+          13772,
+          15168,
+          19560,
+          20360,
+          32556,
+          38292,
+          42712,
+          45944
+        ],
+        "observation_error": [],
+        "alive_tree_pids_after": [],
+        "child_alive_after_interruption": false,
+        "descendants_alive_after_interruption": {
+          "45944": false,
+          "20360": false,
+          "3716": false,
+          "38292": false,
+          "42712": false,
+          "3728": false,
+          "13772": false,
+          "32556": false,
+          "4368": false,
+          "15168": false
+        },
+        "all_child_processes_terminated": true,
+        "report_accepted": false,
+        "canonical_state_preserved": true,
+        "journal_marked_interrupted": true,
+        "pass": true
+      },
+      "builder_cancel": {
+        "actor_role": "BUILDER",
+        "mode": "cancel",
+        "duration_seconds": 4.67,
+        "interrupted_reason": "CANCELLED",
+        "expected_reason": "CANCELLED",
+        "child_pid": 16044,
+        "observed_tree_pids_before": [
+          1872,
+          2452,
+          16044,
+          20268,
+          20616,
+          24752,
+          27772,
+          32168,
+          32992,
+          33432,
+          38644,
+          40692,
+          40956,
+          46044
+        ],
+        "observation_error": [],
+        "alive_tree_pids_after": [],
+        "child_alive_after_interruption": false,
+        "descendants_alive_after_interruption": {
+          "46044": false,
+          "20616": false,
+          "32168": false,
+          "1872": false,
+          "40692": false,
+          "32992": false,
+          "20268": false,
+          "33432": false,
+          "38644": false,
+          "27772": false,
+          "40956": false,
+          "2452": false,
+          "24752": false
+        },
+        "all_child_processes_terminated": true,
+        "report_accepted": false,
+        "canonical_state_preserved": true,
+        "journal_marked_interrupted": true,
+        "pass": true
+      },
+      "auditor_timeout": {
+        "actor_role": "AUDITOR",
+        "mode": "timeout",
+        "duration_seconds": 3.21,
+        "interrupted_reason": "TIMEOUT",
+        "expected_reason": "TIMEOUT",
+        "child_pid": 46344,
+        "observed_tree_pids_before": [
+          14448,
+          24308,
+          42368,
+          46344
+        ],
+        "observation_error": [],
+        "alive_tree_pids_after": [],
+        "child_alive_after_interruption": false,
+        "descendants_alive_after_interruption": {
+          "14448": false,
+          "42368": false,
+          "24308": false
+        },
+        "all_child_processes_terminated": true,
+        "report_accepted": false,
+        "canonical_state_preserved": true,
+        "journal_marked_interrupted": true,
+        "pass": true
+      },
+      "auditor_cancel": {
+        "actor_role": "AUDITOR",
+        "mode": "cancel",
+        "duration_seconds": 1.85,
+        "interrupted_reason": "CANCELLED",
+        "expected_reason": "CANCELLED",
+        "child_pid": 13220,
+        "observed_tree_pids_before": [
+          13220,
+          27268,
+          27944,
+          28888
+        ],
+        "observation_error": [],
+        "alive_tree_pids_after": [],
+        "child_alive_after_interruption": false,
+        "descendants_alive_after_interruption": {
+          "28888": false,
+          "27944": false,
+          "27268": false
+        },
+        "all_child_processes_terminated": true,
+        "report_accepted": false,
+        "canonical_state_preserved": true,
+        "journal_marked_interrupted": true,
+        "pass": true
+      }
+    }
+  },
+  "package_root": "evev2m2",
+  "artifacts": {
+    "builder_bundle": {
+      "path": "builder.bundle",
+      "sha256": "a5d5534f4240e36f5136253306aa249bbf7fff9ca184eab145f75ba408e3746a"
+    },
+    "builder_report": {
+      "path": "builder-report.json",
+      "sha256": "1a2e20dbbca98ce12349d398f5642b0bcd13a318bd4bc98e60a8fe9c9a23f2e2"
+    },
+    "audit_report": {
+      "path": "audit-report.json",
+      "sha256": "acbe35fce2ffb7407974cfcbc2e2d6c007dc5bf39fcb3a07bbf64f47201d16d0"
+    },
+    "final_state": {
+      "path": "final-orchestrator-state.json",
+      "sha256": "15744e510558361ea952bad439e814061693b1430de4aabf8c2323a227c9d597"
+    },
+    "evidence": {
+      "r0-builder-check-74275c9883ba2cb4": {
+        "path": "evidence\\r0-builder-check-74275c9883ba2cb4.json",
+        "sha256": "85ed57648189fb2fd6612071f26af1c9a8a1e6fbc3e30d4134f183295347a96a"
+      },
+      "r1-audit-check-9ec33e7885028dce": {
+        "path": "evidence\\r1-audit-check-9ec33e7885028dce.json",
+        "sha256": "6d5e199c8e8b6916e5c7af3f5bdfe87a9798f407e3b83b2dbf800b64b15de751"
+      },
+      "r1-audit-check-f2519ac77587ba40": {
+        "path": "evidence\\r1-audit-check-f2519ac77587ba40.json",
+        "sha256": "88697e112978ea68e9cd4390a92145a744082386b7eec8eb83c183979dba3589"
+      },
+      "r1-audit-check-f8b4bbb017daf363": {
+        "path": "evidence\\r1-audit-check-f8b4bbb017daf363.json",
+        "sha256": "f8a46ff142a9cef1bd900e0637f795e77ab4e148d7ab5e3a2fbb2aa99a1a7f9c"
+      }
+    },
+    "operations": {
+      "op-6efe19fb216d6cbca3ffeeb6b35f1df7cd5b981fa17d05ca4700ce45b1ee5a0b": {
+        "path": "operations\\op-6efe19fb216d6cbca3ffeeb6b35f1df7cd5b981fa17d05ca4700ce45b1ee5a0b.json",
+        "sha256": "78ce0eb0effc1805363f51eabfa1d113f74058a1f3201d321de4b63ba3aabd5c"
+      },
+      "op-6efe19fb216d6cbca3ffeeb6b35f1df7cd5b981fa17d05ca4700ce45b1ee5a0b.report": {
+        "path": "operations\\op-6efe19fb216d6cbca3ffeeb6b35f1df7cd5b981fa17d05ca4700ce45b1ee5a0b.report.json",
+        "sha256": "acbe35fce2ffb7407974cfcbc2e2d6c007dc5bf39fcb3a07bbf64f47201d16d0"
+      },
+      "op-fb97fb7b1ba0216c2199e108bb6b67ceb7cfa803d697f88234748343e23311f2": {
+        "path": "operations\\op-fb97fb7b1ba0216c2199e108bb6b67ceb7cfa803d697f88234748343e23311f2.json",
+        "sha256": "d83e86f793d737339893565937b5ee91fda0fd0a2e3f9e3a928f1bd73682ceba"
+      },
+      "op-fb97fb7b1ba0216c2199e108bb6b67ceb7cfa803d697f88234748343e23311f2.report": {
+        "path": "operations\\op-fb97fb7b1ba0216c2199e108bb6b67ceb7cfa803d697f88234748343e23311f2.report.json",
+        "sha256": "1a2e20dbbca98ce12349d398f5642b0bcd13a318bd4bc98e60a8fe9c9a23f2e2"
+      }
+    },
+    "interruptions": {
+      "builder_timeout": {
+        "state_before": {
+          "path": "interruptions/builder_timeout/state-before.json",
+          "sha256": "e78ced235f06d903e22c1b40124022761b0314b8e70c89c188d8d84fa97c9ab8"
+        },
+        "state_after": {
+          "path": "interruptions/builder_timeout/state-after.json",
+          "sha256": "e78ced235f06d903e22c1b40124022761b0314b8e70c89c188d8d84fa97c9ab8"
+        },
+        "absence_proof": {
+          "path": "interruptions/builder_timeout/absence-proof.json",
+          "sha256": "db8d0a03817a1a74caa5a1fa1501730e0c64b76f924d44be844f35390f508814"
+        },
+        "journal": {
+          "path": "interruptions/builder_timeout/journal.json",
+          "sha256": "27a70a46978e4023e24383cfe33b4fa35f9b4fcae5fad456a824c5389e85eb20"
+        },
+        "reports_dir": "interruptions/builder_timeout/reports"
+      },
+      "builder_cancel": {
+        "state_before": {
+          "path": "interruptions/builder_cancel/state-before.json",
+          "sha256": "5dd709d3232b7abdc807da26f450daabaa36c1da4e559fb90bd1905da92491b5"
+        },
+        "state_after": {
+          "path": "interruptions/builder_cancel/state-after.json",
+          "sha256": "5dd709d3232b7abdc807da26f450daabaa36c1da4e559fb90bd1905da92491b5"
+        },
+        "absence_proof": {
+          "path": "interruptions/builder_cancel/absence-proof.json",
+          "sha256": "c2b2ce5075a4df414450078b9f5cd0a1e92242a30be40696a54dc634729ea6db"
+        },
+        "journal": {
+          "path": "interruptions/builder_cancel/journal.json",
+          "sha256": "59471f7ea4e3fae40b5d1864f5426d325834874d7c54bd7233dfbdf0f00f575c"
+        },
+        "reports_dir": "interruptions/builder_cancel/reports"
+      },
+      "auditor_timeout": {
+        "state_before": {
+          "path": "interruptions/auditor_timeout/state-before.json",
+          "sha256": "8f508e0c278d459a9f155941b8a0e6697bbc46117173724e9d17b9d85ea97191"
+        },
+        "state_after": {
+          "path": "interruptions/auditor_timeout/state-after.json",
+          "sha256": "8f508e0c278d459a9f155941b8a0e6697bbc46117173724e9d17b9d85ea97191"
+        },
+        "absence_proof": {
+          "path": "interruptions/auditor_timeout/absence-proof.json",
+          "sha256": "4c043684a2c7135bb9d5f287012cebbf24ed6b5ed5e7d5e6036511d19d238781"
+        },
+        "journal": {
+          "path": "interruptions/auditor_timeout/journal.json",
+          "sha256": "f6dcdcce82989bdf758c429eb54cf67d8ab05ae10f3268447055df5b4a3bbc6f"
+        },
+        "reports_dir": "interruptions/auditor_timeout/reports"
+      },
+      "auditor_cancel": {
+        "state_before": {
+          "path": "interruptions/auditor_cancel/state-before.json",
+          "sha256": "a0dcacbf621dc258e9aadd5fd56e03885c03fd0963173d689187a43e955418ef"
+        },
+        "state_after": {
+          "path": "interruptions/auditor_cancel/state-after.json",
+          "sha256": "a0dcacbf621dc258e9aadd5fd56e03885c03fd0963173d689187a43e955418ef"
+        },
+        "absence_proof": {
+          "path": "interruptions/auditor_cancel/absence-proof.json",
+          "sha256": "71d7d1753c559530bbd6acff3e2cfe5c056a8cb1c3da1db365842e0632f2e5d8"
+        },
+        "journal": {
+          "path": "interruptions/auditor_cancel/journal.json",
+          "sha256": "515f8cfe39958a6f0e3bb23f3f8cc69afd4f7be8ae17f4f17563cf15c153aba9"
+        },
+        "reports_dir": "interruptions/auditor_cancel/reports"
+      }
+    }
+  }
+}

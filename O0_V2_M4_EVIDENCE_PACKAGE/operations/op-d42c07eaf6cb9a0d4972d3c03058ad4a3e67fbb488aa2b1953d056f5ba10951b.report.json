@@ -1,0 +1,26 @@
+{
+  "schema_version": "0.1",
+  "executor_id": "queue-builder",
+  "role": "BUILDER",
+  "authority": "IMPLEMENTATION",
+  "result_sha": "4beaaaaf0bf0800e829cc5dbd00088943d1575ed",
+  "result": "READY_FOR_AUDIT",
+  "summary": "Completed task-02-multiply",
+  "changed_paths": [
+    "calc.py",
+    "test_calc.py"
+  ],
+  "checks": [
+    {
+      "id": "chk-task-02-multiply",
+      "status": "PASS",
+      "evidence": {
+        "evidence_id": "r0-builder-check-ee8d654daa5cf0d2",
+        "sha256": "717bcd32b3aaadf893b6fcc05c3935964fda6e4b6d1c2910b57a03ad2e1d504c"
+      }
+    }
+  ],
+  "limitations": [],
+  "disputed_findings": [],
+  "escalation": null
+}

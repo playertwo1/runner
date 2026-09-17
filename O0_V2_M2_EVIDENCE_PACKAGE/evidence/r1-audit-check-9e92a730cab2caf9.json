@@ -1,0 +1,1 @@
+{"audit_round":1,"audit_target_sha":"ccc07302d508194cbd5885e2dd3fc8718d1d7127","content":"Verified subtract(a, b) returns a - b.","evidence_id":"r1-audit-check-9e92a730cab2caf9","run_id":"run-65f08ff607c9d916afe60b94bb392be048fa5070d3e54cf01c58abad1c9b7d0e","schema_version":"0.1"}

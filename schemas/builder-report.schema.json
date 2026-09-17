@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ideias-standard.local/schemas/builder-report.schema.json",
+  "title": "Ideias Standard Builder Report",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "executor_id", "role", "authority", "result_sha", "result", "summary", "changed_paths", "checks", "limitations", "disputed_findings", "escalation"],
+  "properties": {
+    "schema_version": {"type": "string", "const": "0.1"},
+    "executor_id": {"type": "string", "minLength": 1},
+    "role": {"type": "string", "const": "BUILDER"},
+    "authority": {"type": "string", "const": "IMPLEMENTATION"},
+    "result_sha": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "result": {"enum": ["READY_FOR_AUDIT", "BLOCKED", "DISPUTED"]},
+    "summary": {"type": "string", "minLength": 1},
+    "changed_paths": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "checks": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["id", "status", "evidence"], "properties": {"id": {"type": "string", "minLength": 1}, "status": {"enum": ["PASS", "FAIL", "NOT_RUN", "NOT_APPLICABLE"]}, "evidence": {"$ref": "#/$defs/evidence_reference"}}}},
+    "limitations": {"type": "array", "items": {"type": "string", "minLength": 1}},
+    "disputed_findings": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "escalation": {"type": ["string", "null"]}
+  },
+  "$defs": {"evidence_reference": {"type": "object", "additionalProperties": false, "required": ["evidence_id", "sha256"], "properties": {"evidence_id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,127}$"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}}},
+  "allOf": [
+    {
+      "if": {"properties": {"result": {"const": "DISPUTED"}}, "required": ["result"]},
+      "then": {"properties": {"disputed_findings": {"minItems": 1}}}
+    }
+  ]
+}

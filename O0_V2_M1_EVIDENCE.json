@@ -1,0 +1,79 @@
+{
+  "schema_version": "0.1",
+  "scenario": "O0-v2-M1-cli-validation",
+  "acceptance_criteria": {
+    "version_recorded": true,
+    "authentication_confirmed": true,
+    "non_interactive_execution": true,
+    "exit_codes_verified": true,
+    "explicit_working_directories": true,
+    "builder_file_changed": true,
+    "builder_unit_test_executed": true,
+    "builder_commit_created": true,
+    "builder_verifiable_sha": true,
+    "auditor_separate_checkout": true,
+    "auditor_code_write_protected": true,
+    "auditor_reports_outside_checkout": true,
+    "structured_output_captured": true,
+    "no_interactive_prompts": true
+  },
+  "builder": {
+    "cli_name": "Antigravity CLI",
+    "binary_path": "C:\\Users\\fael\\AppData\\Local\\agy\\bin\\agy.exe",
+    "version": "1.2.4",
+    "auth_mode": "Local Antigravity / Gemini authenticated session",
+    "command": [
+      "C:\\Users\\fael\\AppData\\Local\\agy\\bin\\agy.exe",
+      "--add-dir=A:\\ideias_standard\\.tmp_o0_m1_run\\builder_repo",
+      "--model=gemini-3.7-flash-medium",
+      "--dangerously-skip-permissions",
+      "--output-format",
+      "json",
+      "--print=In the active workspace A:\\ideias_standard\\.tmp_o0_m1_run\\builder_repo, update calc.py to add a function 'multiply(a: int, b: int) -> int' that returns a * b. In test_calc.py, add a test method 'test_multiply' that asserts multiply(3, 4) == 12. Run the tests using 'python -m unittest test_calc.py'. When tests pass, stage the files with 'git add calc.py test_calc.py' and commit with message 'feat(calc): add multiply function with tests'. Reply with only the word DONE."
+    ],
+    "working_directory": "A:\\ideias_standard\\.tmp_o0_m1_run\\builder_repo",
+    "exit_code": 0,
+    "duration_seconds": 22.12,
+    "conversation_id": "918f5144-beaf-418c-9662-6ebf91ddb2a4",
+    "status": "SUCCESS",
+    "usage": {
+      "input_tokens": 42445,
+      "output_tokens": 1049,
+      "thinking_tokens": 314,
+      "cache_read_tokens": 117969,
+      "total_tokens": 43494
+    },
+    "base_sha": "d54af631a21db927b6252e5bdb19f1ac122322cd",
+    "produced_sha": "82eddefa18f23ae1b718f0be15ea20999fbe6953",
+    "commit_log": "commit 82eddefa18f23ae1b718f0be15ea20999fbe6953\nAuthor: Antigravity Builder <builder@antigravity.test>\nDate:   Wed Sep 16 15:14:55 2026 -0300\n\n    feat(calc): add multiply function with tests\n\n calc.py      | 4 ++++\n test_calc.py | 5 ++++-\n 2 files changed, 8 insertions(+), 1 deletion(-)",
+    "unit_test_passed": true
+  },
+  "auditor": {
+    "cli_name": "OpenAI Codex CLI",
+    "binary_path": "C:\\Users\\fael\\AppData\\Roaming\\npm\\codex.CMD",
+    "version": "codex-cli 0.154.0",
+    "auth_mode": "ChatGPT stored credentials (~/.codex/auth.json)",
+    "command": [
+      "C:\\Users\\fael\\AppData\\Roaming\\npm\\codex.CMD",
+      "exec",
+      "--ephemeral",
+      "--skip-git-repo-check",
+      "-C",
+      "A:\\ideias_standard\\.tmp_o0_m1_run\\audit_checkout",
+      "--sandbox",
+      "read-only",
+      "-o",
+      "A:\\ideias_standard\\.tmp_o0_m1_run\\audit_reports\\codex_audit_report.json",
+      "You are an independent auditor. Audit the repository in the current directory at commit 82eddefa18f23ae1b718f0be15ea20999fbe6953. Inspect calc.py and test_calc.py. Verify if multiply(a, b) and test_multiply correctly implement and test multiplication. Confirm that the implementation is correct and complete. Write a structured evaluation with: AUDIT_RESULT (PASS or FAIL), SUMMARY, FINDINGS (list defects or 'none'), and CHECKS."
+    ],
+    "working_directory": "A:\\ideias_standard\\.tmp_o0_m1_run\\audit_checkout",
+    "exit_code": 0,
+    "duration_seconds": 35.79,
+    "audited_sha": "82eddefa18f23ae1b718f0be15ea20999fbe6953",
+    "write_protection_verified": true,
+    "checkout_unmodified": true,
+    "report_file_path": "audit_reports\\codex_audit_report.json",
+    "report_file_sha256": "f4d1892aca5d3cef0c20e6eda67f855658fd33617d57b4706864979cb4ea75fd",
+    "report_summary_preview": "AUDIT_RESULT: PASS\n\nSUMMARY: At commit `82eddefa18f23ae1b718f0be15ea20999fbe6953`, `multiply(a, b)` correctly returns `a * b`. `test_multiply` correctly verifies that `multiply(3, 4)` equals `12`. The requested implementation is correct and complete.\n\nFINDINGS:\n\n- none\n\nCHECKS:\n\n- Confirmed the requested commit is checked out.\n- Confirmed the worktree is clean.\n- Inspected `calc.py` and `test_calc"
+  }
+}

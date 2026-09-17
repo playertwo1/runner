@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ideias-standard.local/schemas/reaudit-handoff.schema.json",
+  "title": "Ideias Standard Reaudit Handoff",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "previous_audited_sha", "new_audit_target_sha", "audit_round", "context_mode", "full_context_reasons", "findings", "changed_paths", "declared_changed_paths", "reusable_evidence"],
+  "properties": {
+    "schema_version": {"type": "string", "const": "0.1"},
+    "previous_audited_sha": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "new_audit_target_sha": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "audit_round": {"type": "integer", "minimum": 1},
+    "context_mode": {"enum": ["DELTA", "FULL"]},
+    "full_context_reasons": {"type": "array", "uniqueItems": true, "items": {"enum": ["OUT_OF_SCOPE_CHANGE", "MISSING_EVIDENCE", "MATERIAL_RISK"]}},
+    "findings": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["evidence"],
+        "properties": {"evidence": {"$ref": "#/$defs/evidence_reference"}}
+      }
+    },
+    "changed_paths": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "declared_changed_paths": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "reusable_evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["check_id", "status", "evidence"],
+        "properties": {
+          "check_id": {"type": "string", "minLength": 1},
+          "status": {"enum": ["PASS", "FAIL", "NOT_RUN", "NOT_APPLICABLE"]},
+          "evidence": {"$ref": "#/$defs/evidence_reference"}
+        }
+      }
+    }
+  },
+  "$defs": {
+    "evidence_reference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["evidence_id", "sha256"],
+      "properties": {
+        "evidence_id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,127}$"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    }
+  },
+  "allOf": [
+    {"if": {"properties": {"context_mode": {"const": "DELTA"}}}, "then": {"properties": {"full_context_reasons": {"maxItems": 0}}}},
+    {"if": {"properties": {"context_mode": {"const": "FULL"}}}, "then": {"properties": {"full_context_reasons": {"minItems": 1}}}}
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "schema_version": "0.1",
+  "scenario": "O0-v2-M1-cli-validation",
+  "acceptance_criteria": {
+    "version_recorded": true,
+    "authentication_confirmed": true,
+    "non_interactive_execution": true,
+    "exit_codes_verified": true,
+    "explicit_working_directories": true,
+    "builder_file_changed": true,
+    "builder_unit_test_executed": true,
+    "builder_commit_created": true,
+    "builder_verifiable_sha": true,
+    "auditor_separate_checkout": true,
+    "auditor_code_write_protected": true,
+    "auditor_reports_outside_checkout": true,
+    "structured_output_captured": true,
+    "no_interactive_prompts": true
+  },
+  "builder": {
+    "cli_name": "Antigravity CLI",
+    "binary_path": "C:\\Users\\fael\\AppData\\Local\\agy\\bin\\agy.exe",
+    "version": "1.2.4",
+    "auth_mode": "Local Antigravity / Gemini authenticated session",
+    "command": [
+      "C:\\Users\\fael\\AppData\\Local\\agy\\bin\\agy.exe",
+      "--add-dir=A:\\ideias_standard\\.tmp_o0_m1_reaudit_20260916\\builder_repo",
+      "--model=gemini-3.7-flash-medium",
+      "--dangerously-skip-permissions",
+      "--output-format",
+      "json",
+      "--print=In the active workspace A:\\ideias_standard\\.tmp_o0_m1_reaudit_20260916\\builder_repo, update calc.py to add a function 'multiply(a: int, b: int) -> int' that returns a * b. In test_calc.py, add a test method 'test_multiply' that asserts multiply(3, 4) == 12. Run the tests using 'python -m unittest test_calc.py'. When tests pass, stage the files with 'git add calc.py test_calc.py' and commit with message 'feat(calc): add multiply function with tests'. Reply with only the word DONE."
+    ],
+    "working_directory": "A:\\ideias_standard\\.tmp_o0_m1_reaudit_20260916\\builder_repo",
+    "exit_code": 0,
+    "duration_seconds": 25.56,
+    "conversation_id": "4b83f3d4-fce8-4a8e-8a12-016f2bc66497",
+    "status": "SUCCESS",
+    "usage": {
+      "input_tokens": 48018,
+      "output_tokens": 1401,
+      "thinking_tokens": 532,
+      "cache_read_tokens": 138296,
+      "total_tokens": 49419
+    },
+    "base_sha": "97accb89e13ff07455fb2c2928401ccd1c271942",
+    "produced_sha": "09e05b65ce8dcb35e9b83d08fb4b8e5b96662694",
+    "commit_log": "commit 09e05b65ce8dcb35e9b83d08fb4b8e5b96662694\nAuthor: Antigravity Builder <builder@antigravity.test>\nDate:   Wed Sep 16 15:38:04 2026 -0300\n\n    feat(calc): add multiply function with tests\n\n calc.py      | 5 +++++\n test_calc.py | 6 +++++-\n 2 files changed, 10 insertions(+), 1 deletion(-)",
+    "unit_test_passed": true
+  },
+  "auditor": {
+    "cli_name": "OpenAI Codex CLI",
+    "binary_path": "C:\\Users\\fael\\AppData\\Roaming\\npm\\codex.CMD",
+    "version": "codex-cli 0.154.0",
+    "auth_mode": "ChatGPT stored credentials (~/.codex/auth.json)",
+    "command": [
+      "C:\\Users\\fael\\AppData\\Roaming\\npm\\codex.CMD",
+      "exec",
+      "--ephemeral",
+      "--skip-git-repo-check",
+      "-C",
+      "A:\\ideias_standard\\.tmp_o0_m1_reaudit_20260916\\audit_checkout",
+      "--sandbox",
+      "read-only",
+      "--json",
+      "--output-schema",
+      "A:\\ideias_standard\\.tmp_o0_m1_reaudit_20260916\\audit_reports\\auditor-output.schema.json",
+      "-o",
+      "A:\\ideias_standard\\.tmp_o0_m1_reaudit_20260916\\audit_reports\\codex_audit_report.json",
+      "You are an independent auditor. Audit the repository in the current directory at commit 09e05b65ce8dcb35e9b83d08fb4b8e5b96662694. Inspect calc.py and test_calc.py. Verify if multiply(a, b) and test_multiply correctly implement and test multiplication. Confirm that the implementation is correct and complete. Return the JSON report required by the output schema. Use audit_result PASS only if the implementation and tests are correct. Use arrays of strings for findings and checks; findings must be empty for PASS."
+    ],
+    "working_directory": "A:\\ideias_standard\\.tmp_o0_m1_reaudit_20260916\\audit_checkout",
+    "exit_code": 0,
+    "duration_seconds": 40.16,
+    "audited_sha": "09e05b65ce8dcb35e9b83d08fb4b8e5b96662694",
+    "write_protection_verified": true,
+    "write_attempt_rejected": true,
+    "write_attempt_path": "calc.py",
+    "write_attempt_error": "PermissionError",
+    "write_attempt_sha256_before": "91876997320d373f84e3905cdd1bb02795a4aa3f74689cd858ebc7455b854286",
+    "write_attempt_sha256_after": "91876997320d373f84e3905cdd1bb02795a4aa3f74689cd858ebc7455b854286",
+    "checkout_unmodified": true,
+    "report_file_path": "audit_reports\\codex_audit_report.json",
+    "report_file_sha256": "a70bed8a17e6650e68594814b33b9df169f3c7f47827bff523d017a78ca26c61",
+    "audit_result": "PASS"
+  },
+  "package_root": "O0_V2_M1_EVIDENCE_REAUDIT_PACKAGE",
+  "artifacts": {
+    "builder_bundle": {
+      "path": "builder.bundle",
+      "sha256": "7a9ddb0bfd041e886faefd76a00e1bc1965cb42f835af520b938490a19bc9e08"
+    },
+    "auditor_report": {
+      "path": "codex_audit_report.json",
+      "sha256": "a70bed8a17e6650e68594814b33b9df169f3c7f47827bff523d017a78ca26c61"
+    },
+    "builder_output": {
+      "path": "antigravity_output.json",
+      "sha256": "6df74b647799e2962cc03dd58ac2de278672664abdd30cfef16f55317be4402e"
+    },
+    "auditor_events": {
+      "path": "codex_events.jsonl",
+      "sha256": "6afd6172a866d460cfbdf614185cf69da776574b7aed963c71932ca695d35d6c"
+    }
+  }
+}

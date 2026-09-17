@@ -1,0 +1,70 @@
+{
+  "schema_version": "0.1",
+  "executor_id": "codex-cli",
+  "role": "AUDITOR",
+  "authority": "INDEPENDENT_AUDIT",
+  "audit_result": "FAIL",
+  "audited_sha": "09b34e03c774009de69f761c3db8f69406a4ff1a",
+  "summary": "multiply is incorrectly implemented using addition. The test suite passes only because test_multiply checks 2 and 2, for which addition and multiplication both produce 4.",
+  "findings": [
+    {
+      "id": "CODEX-FINDING-001",
+      "severity": "HIGH",
+      "blocking": true,
+      "files": [
+        "."
+      ],
+      "evidence": {
+        "evidence_id": "r1-audit-finding-121fd20817113e28",
+        "sha256": "a6aa2b99a9d01def8a408854d765e3476bf955f0b9079099c1dd027956c3ab76"
+      },
+      "problem": "multiply function implements addition (a + b) instead of multiplication (a * b)",
+      "violated_criterion": "Implementation or test correctness",
+      "resolution_condition": "Builder must fix the reported finding and produce a new SHA."
+    }
+  ],
+  "checks": [
+    {
+      "id": "codex-check-1",
+      "status": "FAIL",
+      "evidence": {
+        "evidence_id": "r1-audit-check-10dc7c0ecb10f841",
+        "sha256": "09bed4ec188f5e6e48c67c6f97eb34304551b3bb554bdcfb34e09946e15020a0"
+      }
+    },
+    {
+      "id": "codex-check-2",
+      "status": "FAIL",
+      "evidence": {
+        "evidence_id": "r1-audit-check-39106d2204806100",
+        "sha256": "59669c5b59c3215b3425e5d87218f4a1a8bbc0b18ef3f1e9bfc6c2df4017b784"
+      }
+    },
+    {
+      "id": "codex-check-3",
+      "status": "FAIL",
+      "evidence": {
+        "evidence_id": "r1-audit-check-22c98029a0df52ab",
+        "sha256": "80697cbaa0d93d1e67c66e219dee28b1a7150236e99f7b2e32e299ecb68bd44a"
+      }
+    },
+    {
+      "id": "codex-check-4",
+      "status": "FAIL",
+      "evidence": {
+        "evidence_id": "r1-audit-check-ce29d06da0e9b35c",
+        "sha256": "bf26770d2e2ea60d191a96d1b5c5d5d8d432b93a8dc712d2d5523f835b1b0e3d"
+      }
+    },
+    {
+      "id": "codex-check-5",
+      "status": "FAIL",
+      "evidence": {
+        "evidence_id": "r1-audit-check-5b6e5d5b87e6f964",
+        "sha256": "12cb33fb40c4a6f63f1743898f0b9a0ab10b2040bbf0c2a948a019a116624931"
+      }
+    }
+  ],
+  "residual_risks": [],
+  "gate_registration": "NOT_AUTHORIZED"
+}

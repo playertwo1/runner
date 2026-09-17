@@ -1,0 +1,22 @@
+{
+  "schema_version": "0.1",
+  "executor_id": "queue-auditor",
+  "role": "AUDITOR",
+  "authority": "INDEPENDENT_AUDIT",
+  "audit_result": "PASS",
+  "audited_sha": "4beaaaaf0bf0800e829cc5dbd00088943d1575ed",
+  "summary": "Independent audit PASS for task-02-multiply at 4beaaaaf0bf0800e829cc5dbd00088943d1575ed",
+  "findings": [],
+  "checks": [
+    {
+      "id": "aud-chk-task-02-multiply",
+      "status": "PASS",
+      "evidence": {
+        "evidence_id": "r1-audit-check-9086bfb64ea53df7",
+        "sha256": "5135b9d5b7e231ffb93f062e2812640272512408eeba85b9039fe594a7481bca"
+      }
+    }
+  ],
+  "residual_risks": [],
+  "gate_registration": "NOT_AUTHORIZED"
+}

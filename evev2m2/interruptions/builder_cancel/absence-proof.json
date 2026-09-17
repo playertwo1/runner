@@ -1,0 +1,8 @@
+{
+  "report_exists": false,
+  "report_path": "builder-report.json",
+  "reports_inventory": [
+    "operations/op-a429837766ee66919c5c13a9ab7cb4e6dac65753a68d7056f52586afb9953ab3.journal.json",
+    "runner-failures/failure-99fb168bdafe489594113dc51e2306aa.json"
+  ]
+}

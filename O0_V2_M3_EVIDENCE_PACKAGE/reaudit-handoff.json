@@ -1,0 +1,77 @@
+{
+  "schema_version": "0.1",
+  "previous_audited_sha": "09b34e03c774009de69f761c3db8f69406a4ff1a",
+  "new_audit_target_sha": "d360c36033f3afc8b3210c861d9013223fefdf0a",
+  "audit_round": 1,
+  "context_mode": "FULL",
+  "full_context_reasons": [
+    "MATERIAL_RISK"
+  ],
+  "findings": [
+    {
+      "id": "CODEX-FINDING-001",
+      "severity": "HIGH",
+      "blocking": true,
+      "files": [
+        "."
+      ],
+      "evidence": {
+        "evidence_id": "r1-audit-finding-121fd20817113e28",
+        "sha256": "a6aa2b99a9d01def8a408854d765e3476bf955f0b9079099c1dd027956c3ab76"
+      },
+      "problem": "multiply function implements addition (a + b) instead of multiplication (a * b)",
+      "violated_criterion": "Implementation or test correctness",
+      "resolution_condition": "Builder must fix the reported finding and produce a new SHA."
+    }
+  ],
+  "changed_paths": [
+    "calc.py",
+    "test_calc.py"
+  ],
+  "declared_changed_paths": [
+    "calc.py",
+    "test_calc.py"
+  ],
+  "reusable_evidence": [
+    {
+      "check_id": "codex-check-1",
+      "status": "FAIL",
+      "evidence": {
+        "evidence_id": "r1-check-3478eea0903fd6e3",
+        "sha256": "f368b6100bbbf25247ab2794064f23fc8bddb38056b3b956ff7d3cd099e3841e"
+      }
+    },
+    {
+      "check_id": "codex-check-2",
+      "status": "FAIL",
+      "evidence": {
+        "evidence_id": "r1-check-2a743b0b7fb686ef",
+        "sha256": "667f354143b2b5a7c599a46b825bdb4355a74494442e0b82eec69bb833021fec"
+      }
+    },
+    {
+      "check_id": "codex-check-3",
+      "status": "FAIL",
+      "evidence": {
+        "evidence_id": "r1-check-809dc1fc5625af22",
+        "sha256": "2060f69eaf60ae0045f69cc341d32a34239ecd7bce121df89b9afd28cef79b7d"
+      }
+    },
+    {
+      "check_id": "codex-check-4",
+      "status": "FAIL",
+      "evidence": {
+        "evidence_id": "r1-check-d9d2c6d287b197ab",
+        "sha256": "2ef28fee5ab34b777fa0f64febb39c33ed270d18d6407ca3623285acda998b97"
+      }
+    },
+    {
+      "check_id": "codex-check-5",
+      "status": "FAIL",
+      "evidence": {
+        "evidence_id": "r1-check-12d23b6f9e52bdec",
+        "sha256": "9009d45033d1a20a8e10ef11cf43cec239acfb41c3237af82d4763b45cd99c71"
+      }
+    }
+  ]
+}

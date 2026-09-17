@@ -1,0 +1,59 @@
+{
+  "schema_version": "0.1",
+  "invocation_id": "o0-v2-m5-final",
+  "phase": "O0",
+  "tasks": [
+    {
+      "task_id": "known-defect",
+      "goal": "Detect and correct multiply defect",
+      "scope": [
+        "calc.py",
+        "test_calc.py"
+      ],
+      "acceptance_criteria": [
+        "FAIL then correction then PASS"
+      ],
+      "phase": "O0",
+      "builder_command": [
+        "C:\\Python314\\python.exe",
+        "A:\\ideias_standard\\scripts\\o0_antigravity_adapter.py",
+        "--task",
+        "Add multiply(a,b) to calc.py, intentionally implement return a + b, and add a weak test multiply(2,2)==4. Run python -m unittest test_calc.py and commit.",
+        "--test-cmd",
+        "python -m unittest test_calc.py"
+      ],
+      "auditor_command": [
+        "C:\\Python314\\python.exe",
+        "A:\\ideias_standard\\scripts\\o0_codex_adapter.py",
+        "--task",
+        "Verify multiply performs a * b, not addition. FAIL with a blocking finding when it uses +; PASS only after it uses multiplication and tests cover unequal operands."
+      ]
+    },
+    {
+      "task_id": "authorized-second-task",
+      "goal": "Implement subtract",
+      "scope": [
+        "calc.py",
+        "test_calc.py"
+      ],
+      "acceptance_criteria": [
+        "subtract correct and audited"
+      ],
+      "phase": "O0",
+      "builder_command": [
+        "C:\\Python314\\python.exe",
+        "A:\\ideias_standard\\scripts\\o0_antigravity_adapter.py",
+        "--task",
+        "Add subtract(a,b) returning a-b and a unit test with unequal operands. Run python -m unittest test_calc.py and commit.",
+        "--test-cmd",
+        "python -m unittest test_calc.py"
+      ],
+      "auditor_command": [
+        "C:\\Python314\\python.exe",
+        "A:\\ideias_standard\\scripts\\o0_codex_adapter.py",
+        "--task",
+        "Verify subtract returns a-b, its test passes, and return PASS only when correct."
+      ]
+    }
+  ]
+}

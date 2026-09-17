@@ -1,0 +1,8 @@
+[
+  {
+    "pid": "30560",
+    "exit_code": 0,
+    "stdout": "\u00c3\u0160XITO: o processo com PID 25940 (processo filho de PID 14028) foi finalizado.\n\u00c3\u0160XITO: o processo com PID 14028 (processo filho de PID 10012) foi finalizado.\n\u00c3\u0160XITO: o processo com PID 12460 (processo filho de PID 5684) foi finalizado.\n\u00c3\u0160XITO: o processo com PID 10012 (processo filho de PID 30584) foi finalizado.\n\u00c3\u0160XITO: o processo com PID 30584 (processo filho de PID 21000) foi finalizado.\n\u00c3\u0160XITO: o processo com PID 5684 (processo filho de PID 26600) foi finalizado.\n\u00c3\u0160XITO: o processo com PID 15352 (processo filho de PID 25740) foi finalizado.\n\u00c3\u0160XITO: o processo com PID 21000 (processo filho de PID 25760) foi finalizado.\n\u00c3\u0160XITO: o processo com PID 26600 (processo filho de PID 25760) foi finalizado.\n\u00c3\u0160XITO: o processo com PID 25740 (processo filho de PID 25760) foi finalizado.\n\u00c3\u0160XITO: o processo com PID 25760 (processo filho de PID 30560) foi finalizado.\n\u00c3\u0160XITO: o processo com PID 30560 (processo filho de PID 29048) foi finalizado.\n",
+    "stderr": ""
+  }
+]

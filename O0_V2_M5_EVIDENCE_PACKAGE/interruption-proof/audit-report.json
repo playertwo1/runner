@@ -1,0 +1,38 @@
+{
+  "schema_version": "0.1",
+  "executor_id": "codex-cli",
+  "role": "AUDITOR",
+  "authority": "INDEPENDENT_AUDIT",
+  "audit_result": "PASS",
+  "audited_sha": "c3897fde5fe6a6bca5d9a3b811a0d0f4ab79203f",
+  "summary": "subtract(a, b) correctly returns a - b. test_subtract checks the expected result, and all tests pass.",
+  "findings": [],
+  "checks": [
+    {
+      "id": "codex-check-1",
+      "status": "PASS",
+      "evidence": {
+        "evidence_id": "r1-audit-check-f8b4bbb017daf363",
+        "sha256": "f8a46ff142a9cef1bd900e0637f795e77ab4e148d7ab5e3a2fbb2aa99a1a7f9c"
+      }
+    },
+    {
+      "id": "codex-check-2",
+      "status": "PASS",
+      "evidence": {
+        "evidence_id": "r1-audit-check-9ec33e7885028dce",
+        "sha256": "6d5e199c8e8b6916e5c7af3f5bdfe87a9798f407e3b83b2dbf800b64b15de751"
+      }
+    },
+    {
+      "id": "codex-check-3",
+      "status": "PASS",
+      "evidence": {
+        "evidence_id": "r1-audit-check-f2519ac77587ba40",
+        "sha256": "88697e112978ea68e9cd4390a92145a744082386b7eec8eb83c183979dba3589"
+      }
+    }
+  ],
+  "residual_risks": [],
+  "gate_registration": "NOT_AUTHORIZED"
+}

@@ -1,0 +1,22 @@
+{
+  "schema_version": "0.1",
+  "executor_id": "auditor-adversary",
+  "role": "AUDITOR",
+  "authority": "INDEPENDENT_AUDIT",
+  "audit_result": "PASS",
+  "audited_sha": "76e12144f5aa2e5c32eaede222dddbc26ad19e39",
+  "summary": "adversarial candidate audit accepted",
+  "findings": [],
+  "checks": [
+    {
+      "id": "adversarial-audit-check",
+      "status": "PASS",
+      "evidence": {
+        "evidence_id": "r1-audit-check-a95c259b3d446736",
+        "sha256": "9b9ad839a1613f0e31d03d2005f5ddafb7d3997cfafde68fc6d7234d2bf57112"
+      }
+    }
+  ],
+  "residual_risks": [],
+  "gate_registration": "NOT_AUTHORIZED"
+}

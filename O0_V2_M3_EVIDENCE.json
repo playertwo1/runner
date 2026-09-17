@@ -1,0 +1,220 @@
+{
+  "schema_version": "0.1",
+  "milestone": "O0_V2_M3",
+  "scenario": "real-cli-correction-cycle-single-invocation",
+  "description": "Full Builder -> Auditor FAIL -> Builder fix -> Auditor PASS cycle executed in a single run_loop call with real Antigravity and Codex CLIs.",
+  "cycle_status": "COMPLETED",
+  "cycle_duration_seconds": 136.19,
+  "run_id": "run-c0ebfc6bad6dab143c206953f31ad8c5c036f785ccdce7ccc02f571fab0aa040",
+  "base_sha": "eceb7ca37e2b4c48b45ca73cd75841fa059a551f",
+  "sha_a": "09b34e03c774009de69f761c3db8f69406a4ff1a",
+  "sha_b": "d360c36033f3afc8b3210c861d9013223fefdf0a",
+  "shas_distinct": true,
+  "audit_rounds_total": 2,
+  "max_audit_rounds": 3,
+  "final_state": {
+    "machine_state": "WAITING_PRODUCT_AUTHORITY",
+    "next_actor": "PRODUCT_AUTHORITY",
+    "last_audit_result": "PASS",
+    "audit_round": 2,
+    "max_audit_rounds": 3,
+    "builder_head_sha": "d360c36033f3afc8b3210c861d9013223fefdf0a",
+    "audit_target_sha": "d360c36033f3afc8b3210c861d9013223fefdf0a",
+    "last_audited_sha": "d360c36033f3afc8b3210c861d9013223fefdf0a",
+    "approval": null,
+    "human_gate_required": true,
+    "gate": "NONE",
+    "phase": "O0"
+  },
+  "cycle_steps": [
+    {
+      "operation_id": "op-f63b7c504e9c1916ff90af20b72a8702a6639e31ad37b7d7e27fe3dee9d12473",
+      "actor": "BUILDER",
+      "source_state": "READY_FOR_BUILD",
+      "result_state": "READY_FOR_AUDIT",
+      "target_sha": "09b34e03c774009de69f761c3db8f69406a4ff1a",
+      "result_sha": "09b34e03c774009de69f761c3db8f69406a4ff1a",
+      "status": "READY_FOR_AUDIT",
+      "updated_at": "2026-09-16T21:41:23.326347+00:00"
+    },
+    {
+      "operation_id": "op-dc449a42842774bd4967eaf454aa28390e80a48e1b9ed2ae595a31b7ba02813a",
+      "actor": "AUDITOR",
+      "source_state": "READY_FOR_AUDIT",
+      "result_state": "FIX_REQUIRED",
+      "target_sha": "09b34e03c774009de69f761c3db8f69406a4ff1a",
+      "result_sha": "09b34e03c774009de69f761c3db8f69406a4ff1a",
+      "status": "FAIL",
+      "updated_at": "2026-09-16T21:41:52.481565+00:00"
+    },
+    {
+      "operation_id": "op-d3e6b043100a8265a46e11bcbf64f58aa0260d19a77ba813fd11a81913f4eff7",
+      "actor": "BUILDER",
+      "source_state": "FIX_REQUIRED",
+      "result_state": "READY_FOR_AUDIT",
+      "target_sha": "09b34e03c774009de69f761c3db8f69406a4ff1a",
+      "result_sha": "d360c36033f3afc8b3210c861d9013223fefdf0a",
+      "status": "READY_FOR_AUDIT",
+      "updated_at": "2026-09-16T21:42:20.860687+00:00"
+    },
+    {
+      "operation_id": "op-7a3c3620b3c69b92c96536a97573137e247aaeb3a429202dc785e83da3b2761f",
+      "actor": "AUDITOR",
+      "source_state": "READY_FOR_AUDIT",
+      "result_state": "WAITING_PRODUCT_AUTHORITY",
+      "target_sha": "d360c36033f3afc8b3210c861d9013223fefdf0a",
+      "result_sha": "d360c36033f3afc8b3210c861d9013223fefdf0a",
+      "status": "PASS",
+      "updated_at": "2026-09-16T21:43:18.542117+00:00"
+    }
+  ],
+  "bundle": {
+    "path": "O0_V2_M3_EVIDENCE_PACKAGE/builder.bundle",
+    "sha256": "23ae7d30afa7b288d148e2a2e1f461bdd764a2eea2f8a680ab0101dd88523194",
+    "size_bytes": 1353,
+    "verification_status": "SELF_SUFFICIENT",
+    "verify_output": "The bundle contains this ref:\nd360c36033f3afc8b3210c861d9013223fefdf0a HEAD\nThe bundle records a complete history.\nThe bundle uses this hash algorithm: sha1"
+  },
+  "frozen_checkouts": {
+    "sha_a": {
+      "path": "audit-workspaces/09b34e03c774009de69f761c3db8f69406a4ff1a",
+      "head": "09b34e03c774009de69f761c3db8f69406a4ff1a",
+      "clean": true
+    },
+    "sha_b": {
+      "path": "audit-workspaces/d360c36033f3afc8b3210c861d9013223fefdf0a",
+      "head": "d360c36033f3afc8b3210c861d9013223fefdf0a",
+      "clean": true
+    }
+  },
+  "evidence_references": {
+    "r0-builder-check-455954b4ca5ed6ba": {
+      "path": "evidence/r0-builder-check-455954b4ca5ed6ba.json",
+      "sha256": "9afb6f46395c1f0c9631e441a2465890a9ecbcc383c630f6ff2efe6a2b25b51c"
+    },
+    "r1-audit-check-10dc7c0ecb10f841": {
+      "path": "evidence/r1-audit-check-10dc7c0ecb10f841.json",
+      "sha256": "09bed4ec188f5e6e48c67c6f97eb34304551b3bb554bdcfb34e09946e15020a0"
+    },
+    "r1-audit-check-22c98029a0df52ab": {
+      "path": "evidence/r1-audit-check-22c98029a0df52ab.json",
+      "sha256": "80697cbaa0d93d1e67c66e219dee28b1a7150236e99f7b2e32e299ecb68bd44a"
+    },
+    "r1-audit-check-39106d2204806100": {
+      "path": "evidence/r1-audit-check-39106d2204806100.json",
+      "sha256": "59669c5b59c3215b3425e5d87218f4a1a8bbc0b18ef3f1e9bfc6c2df4017b784"
+    },
+    "r1-audit-check-5b6e5d5b87e6f964": {
+      "path": "evidence/r1-audit-check-5b6e5d5b87e6f964.json",
+      "sha256": "12cb33fb40c4a6f63f1743898f0b9a0ab10b2040bbf0c2a948a019a116624931"
+    },
+    "r1-audit-check-ce29d06da0e9b35c": {
+      "path": "evidence/r1-audit-check-ce29d06da0e9b35c.json",
+      "sha256": "bf26770d2e2ea60d191a96d1b5c5d5d8d432b93a8dc712d2d5523f835b1b0e3d"
+    },
+    "r1-audit-finding-121fd20817113e28": {
+      "path": "evidence/r1-audit-finding-121fd20817113e28.json",
+      "sha256": "a6aa2b99a9d01def8a408854d765e3476bf955f0b9079099c1dd027956c3ab76"
+    },
+    "r1-builder-check-68214aba0af84d52": {
+      "path": "evidence/r1-builder-check-68214aba0af84d52.json",
+      "sha256": "26739d102d3a601faa58300d196d9003c8c4517239bba60490273935aa600367"
+    },
+    "r1-check-12d23b6f9e52bdec": {
+      "path": "evidence/r1-check-12d23b6f9e52bdec.json",
+      "sha256": "9009d45033d1a20a8e10ef11cf43cec239acfb41c3237af82d4763b45cd99c71"
+    },
+    "r1-check-2a743b0b7fb686ef": {
+      "path": "evidence/r1-check-2a743b0b7fb686ef.json",
+      "sha256": "667f354143b2b5a7c599a46b825bdb4355a74494442e0b82eec69bb833021fec"
+    },
+    "r1-check-3478eea0903fd6e3": {
+      "path": "evidence/r1-check-3478eea0903fd6e3.json",
+      "sha256": "f368b6100bbbf25247ab2794064f23fc8bddb38056b3b956ff7d3cd099e3841e"
+    },
+    "r1-check-809dc1fc5625af22": {
+      "path": "evidence/r1-check-809dc1fc5625af22.json",
+      "sha256": "2060f69eaf60ae0045f69cc341d32a34239ecd7bce121df89b9afd28cef79b7d"
+    },
+    "r1-check-d9d2c6d287b197ab": {
+      "path": "evidence/r1-check-d9d2c6d287b197ab.json",
+      "sha256": "2ef28fee5ab34b777fa0f64febb39c33ed270d18d6407ca3623285acda998b97"
+    },
+    "r2-audit-check-21ed7fa774aeaad5": {
+      "path": "evidence/r2-audit-check-21ed7fa774aeaad5.json",
+      "sha256": "2b54f0570a182141c7935c596c4b008c4885bfceef2a3e23ec97fa0cb615339c"
+    },
+    "r2-audit-check-6e8ca006b146e100": {
+      "path": "evidence/r2-audit-check-6e8ca006b146e100.json",
+      "sha256": "aed6a4412549ec3d87584fd2441c16d43da95ccffb776a5e9e4a8ed0aa6513a8"
+    },
+    "r2-audit-check-b03a773108a066e8": {
+      "path": "evidence/r2-audit-check-b03a773108a066e8.json",
+      "sha256": "feecdb1d9fe00f2a9c5d32d19bad7fab14615a7642cffb14be4713248e24b1f8"
+    },
+    "r2-audit-check-e9473ee62e029250": {
+      "path": "evidence/r2-audit-check-e9473ee62e029250.json",
+      "sha256": "9f8e3874f170b5a763cb1b3cc44338f34d5f20efd3ec7ea7747c555282c89aa6"
+    }
+  },
+  "operations_records": {
+    "op-7a3c3620b3c69b92c96536a97573137e247aaeb3a429202dc785e83da3b2761f.json": {
+      "path": "operations/op-7a3c3620b3c69b92c96536a97573137e247aaeb3a429202dc785e83da3b2761f.json",
+      "sha256": "adb53e5c3f430d4dbc598e138e3cb1300f5131636512a0ce2547137a8560edd3"
+    },
+    "op-7a3c3620b3c69b92c96536a97573137e247aaeb3a429202dc785e83da3b2761f.report.json": {
+      "path": "operations/op-7a3c3620b3c69b92c96536a97573137e247aaeb3a429202dc785e83da3b2761f.report.json",
+      "sha256": "8d693993040a4b0de5801dfb14447832265822a77665c127cab81e11e0cf1f4c"
+    },
+    "op-d3e6b043100a8265a46e11bcbf64f58aa0260d19a77ba813fd11a81913f4eff7.json": {
+      "path": "operations/op-d3e6b043100a8265a46e11bcbf64f58aa0260d19a77ba813fd11a81913f4eff7.json",
+      "sha256": "3002cd178d92d96a35b0ecfa270185e795f96162a7dd3b8a6bb55f9a74aeb363"
+    },
+    "op-d3e6b043100a8265a46e11bcbf64f58aa0260d19a77ba813fd11a81913f4eff7.report.json": {
+      "path": "operations/op-d3e6b043100a8265a46e11bcbf64f58aa0260d19a77ba813fd11a81913f4eff7.report.json",
+      "sha256": "1cce89b22c361c8ef592f7824d5cf837cfd296f5f5d81b53e26e80efd25e960b"
+    },
+    "op-dc449a42842774bd4967eaf454aa28390e80a48e1b9ed2ae595a31b7ba02813a.json": {
+      "path": "operations/op-dc449a42842774bd4967eaf454aa28390e80a48e1b9ed2ae595a31b7ba02813a.json",
+      "sha256": "cfdb87133b8b5962558e573744a46e141028c4f717fae16178ba079206c76bd0"
+    },
+    "op-dc449a42842774bd4967eaf454aa28390e80a48e1b9ed2ae595a31b7ba02813a.report.json": {
+      "path": "operations/op-dc449a42842774bd4967eaf454aa28390e80a48e1b9ed2ae595a31b7ba02813a.report.json",
+      "sha256": "4fb358e9a2c879af9795c746b81739e13f00ff9908ed8156991c9e6794bdc6ec"
+    },
+    "op-f63b7c504e9c1916ff90af20b72a8702a6639e31ad37b7d7e27fe3dee9d12473.json": {
+      "path": "operations/op-f63b7c504e9c1916ff90af20b72a8702a6639e31ad37b7d7e27fe3dee9d12473.json",
+      "sha256": "0b023907194343b764ea5adc549df610ff7771f618200ee7c99362107bd12087"
+    },
+    "op-f63b7c504e9c1916ff90af20b72a8702a6639e31ad37b7d7e27fe3dee9d12473.report.json": {
+      "path": "operations/op-f63b7c504e9c1916ff90af20b72a8702a6639e31ad37b7d7e27fe3dee9d12473.report.json",
+      "sha256": "ea95845b9d8e9b4b62c746e863ae63de318a3b0d565c770536779e6fa9991477"
+    }
+  },
+  "agents": {
+    "builder": {
+      "cli": "Antigravity CLI (agy)",
+      "adapter": "scripts/o0_antigravity_adapter.py",
+      "authority": "IMPLEMENTATION"
+    },
+    "auditor": {
+      "cli": "OpenAI Codex CLI (codex)",
+      "adapter": "scripts/o0_codex_adapter.py",
+      "authority": "INDEPENDENT_AUDIT"
+    }
+  },
+  "invariants_verified": [
+    "Single invocation via run_loop() coordinates multi-step transitions",
+    "Builder produces initial commit SHA A",
+    "Auditor returns FAIL with structured blocking findings for SHA A",
+    "Runner automatically forwards findings via builder-findings.json and IDEAS_STANDARD_FINDINGS",
+    "Builder corrects the defect, verifies unit tests, and commits distinct SHA B",
+    "Runner validates SHA B != SHA A and prepares reaudit-handoff.json",
+    "Auditor re-audits SHA B in frozen checkout and returns PASS with zero findings",
+    "Runner transitions to WAITING_PRODUCT_AUTHORITY with approval=null and human_gate_required=true",
+    "run_id and SHAs are preserved across all operations",
+    "Audit rounds are tracked and bounded by max_audit_rounds=3",
+    "builder.bundle is self-sufficient and clones standalone with passing tests",
+    "Zero automatic gate approval or phase advancement"
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "schema_version": "0.1",
+  "phase": "O0",
+  "tasks": [
+    {
+      "task_id": "task-01-subtract",
+      "goal": "Implement subtract(a, b) in calc.py and unit tests in test_calc.py",
+      "scope": [
+        "calc.py",
+        "test_calc.py"
+      ],
+      "acceptance_criteria": [
+        "Function subtract(a, b) -> int correctly computes a - b",
+        "test_calc.py includes test_subtract asserting subtract(5, 2) == 3",
+        "All unit tests pass"
+      ],
+      "phase": "O0"
+    },
+    {
+      "task_id": "task-02-multiply",
+      "goal": "Implement multiply(a, b) in calc.py and unit tests in test_calc.py",
+      "scope": [
+        "calc.py",
+        "test_calc.py"
+      ],
+      "acceptance_criteria": [
+        "Function multiply(a, b) -> int correctly computes a * b",
+        "test_calc.py includes test_multiply asserting multiply(3, 4) == 12",
+        "All unit tests pass"
+      ],
+      "phase": "O0"
+    }
+  ]
+}

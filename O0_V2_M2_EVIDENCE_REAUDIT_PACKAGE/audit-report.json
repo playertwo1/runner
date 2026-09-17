@@ -1,0 +1,54 @@
+{
+  "schema_version": "0.1",
+  "executor_id": "codex-cli",
+  "role": "AUDITOR",
+  "authority": "INDEPENDENT_AUDIT",
+  "audit_result": "PASS",
+  "audited_sha": "8cf01e56bbd82e86d021d2d671e4474d1c1880e2",
+  "summary": "subtract(a, b) correctly returns a - b, test_subtract correctly verifies subtract(10, 4) == 6, and the complete test suite passes.",
+  "findings": [],
+  "checks": [
+    {
+      "id": "codex-check-1",
+      "status": "PASS",
+      "evidence": {
+        "evidence_id": "r1-audit-check-7179a10c80ee6c36",
+        "sha256": "55cbc6e7796830cb9180ef79dc3281587aa3a90f809a4be274ad6e61e6a28de6"
+      }
+    },
+    {
+      "id": "codex-check-2",
+      "status": "PASS",
+      "evidence": {
+        "evidence_id": "r1-audit-check-58a4d015bc4f5f5c",
+        "sha256": "5878dc74cb093917ee5d9b12360ebdead6c90155e308b0ac04cdf66938d472a5"
+      }
+    },
+    {
+      "id": "codex-check-3",
+      "status": "PASS",
+      "evidence": {
+        "evidence_id": "r1-audit-check-71bde36ba02917f2",
+        "sha256": "8b6e00c05487b44ae84b8fe810750968239cdf5d0b87df4a8d7db432b8a210a3"
+      }
+    },
+    {
+      "id": "codex-check-4",
+      "status": "PASS",
+      "evidence": {
+        "evidence_id": "r1-audit-check-acbd562969636bc5",
+        "sha256": "0be2a1a2e3e19dbedd38616dff21740d1db7ac0135d80fad4c305ad8724d66a8"
+      }
+    },
+    {
+      "id": "codex-check-5",
+      "status": "PASS",
+      "evidence": {
+        "evidence_id": "r1-audit-check-ee65072209eb837a",
+        "sha256": "d302258d471d408a829990195574be1c0ddc32e3a6ca8a3a9dec3c04473b1c9f"
+      }
+    }
+  ],
+  "residual_risks": [],
+  "gate_registration": "NOT_AUTHORIZED"
+}

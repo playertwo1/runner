@@ -1,0 +1,26 @@
+{
+  "schema_version": "0.1",
+  "executor_id": "antigravity-cli",
+  "role": "BUILDER",
+  "authority": "IMPLEMENTATION",
+  "result_sha": "d48a01e15f193dc7db21773bbe3dd794328ad238",
+  "result": "READY_FOR_AUDIT",
+  "summary": "Antigravity CLI completed task: Fix the following audit findings: Blocking: calc.py returns a + b in multiply(a, b). For unequal operands, multiply(2, 3) returns 5 instead of 6.; test_calc.py tests multiply only with equal operands ",
+  "changed_paths": [
+    "calc.py",
+    "test_calc.py"
+  ],
+  "checks": [
+    {
+      "id": "antigravity-build-and-test",
+      "status": "PASS",
+      "evidence": {
+        "evidence_id": "r1-builder-check-4511d76b32aa8b41",
+        "sha256": "0c085b7c48df905c11e4d35b6da2db9330c06836d4260a23c972d3a525afc448"
+      }
+    }
+  ],
+  "limitations": [],
+  "disputed_findings": [],
+  "escalation": null
+}

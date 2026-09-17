@@ -1,0 +1,26 @@
+{
+  "schema_version": "0.1",
+  "executor_id": "antigravity-cli",
+  "role": "BUILDER",
+  "authority": "IMPLEMENTATION",
+  "result_sha": "eb11e1ddcf07b415201cdd49ee81d3b416bd2c6b",
+  "result": "READY_FOR_AUDIT",
+  "summary": "Antigravity CLI completed task: Add subtract(a,b) returning a-b and a unit test with unequal operands. Run python -m unittest test_calc.py and commit.",
+  "changed_paths": [
+    "calc.py",
+    "test_calc.py"
+  ],
+  "checks": [
+    {
+      "id": "antigravity-build-and-test",
+      "status": "PASS",
+      "evidence": {
+        "evidence_id": "r0-builder-check-b46976e7d810eef7",
+        "sha256": "ec2be3218ac9f2f17a5c62402660ee8a5c4ee08de495bb7bc5d856b261827fb9"
+      }
+    }
+  ],
+  "limitations": [],
+  "disputed_findings": [],
+  "escalation": null
+}

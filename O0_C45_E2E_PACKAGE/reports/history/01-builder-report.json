@@ -1,0 +1,25 @@
+{
+  "schema_version": "0.1",
+  "executor_id": "builder-adversary",
+  "role": "BUILDER",
+  "authority": "IMPLEMENTATION",
+  "result_sha": "76e12144f5aa2e5c32eaede222dddbc26ad19e39",
+  "result": "READY_FOR_AUDIT",
+  "summary": "adversarial candidate committed",
+  "changed_paths": [
+    "artifact.txt"
+  ],
+  "checks": [
+    {
+      "id": "adversarial-builder-check",
+      "status": "PASS",
+      "evidence": {
+        "evidence_id": "r0-builder-check-f0718d1f9cedc23d",
+        "sha256": "83c569bf044b24247c287a0cffdeed1c689eb657c932de30019237f04d19bc8d"
+      }
+    }
+  ],
+  "limitations": [],
+  "disputed_findings": [],
+  "escalation": null
+}

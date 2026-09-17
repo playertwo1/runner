@@ -1,0 +1,38 @@
+{
+  "schema_version": "0.1",
+  "executor_id": "codex-cli",
+  "role": "AUDITOR",
+  "authority": "INDEPENDENT_AUDIT",
+  "audit_result": "PASS",
+  "audited_sha": "eb11e1ddcf07b415201cdd49ee81d3b416bd2c6b",
+  "summary": "The implementation and tests are correct.",
+  "findings": [],
+  "checks": [
+    {
+      "id": "codex-check-1",
+      "status": "PASS",
+      "evidence": {
+        "evidence_id": "r1-audit-check-ce6945e1c82db297",
+        "sha256": "2ed118f5c630946bd954daeae645a5d3626202f0329af36acc0bdd2c117ec107"
+      }
+    },
+    {
+      "id": "codex-check-2",
+      "status": "PASS",
+      "evidence": {
+        "evidence_id": "r1-audit-check-8b114b3167ce1756",
+        "sha256": "353403cd9324c4686a1c59ee39edbd1608c7d902e8921351c280224db31de5c0"
+      }
+    },
+    {
+      "id": "codex-check-3",
+      "status": "PASS",
+      "evidence": {
+        "evidence_id": "r1-audit-check-4468df6af4abb4aa",
+        "sha256": "7d95c21336ed2e5aae0d3042cc3a2b6817e9d07800d47b4d7ae742e107b31034"
+      }
+    }
+  ],
+  "residual_risks": [],
+  "gate_registration": "NOT_AUTHORIZED"
+}

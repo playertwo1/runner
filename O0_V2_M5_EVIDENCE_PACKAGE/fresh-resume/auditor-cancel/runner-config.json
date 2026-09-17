@@ -1,0 +1,17 @@
+{
+  "repository": "C:\\Users\\fael\\AppData\\Local\\Temp\\o0-v2-m5-work\\m5-resume-proof\\auditor-cancel\\repo",
+  "state_path": "C:\\Users\\fael\\AppData\\Local\\Temp\\o0-v2-m5-work\\m5-resume-proof\\auditor-cancel\\interrupted\\orchestrator-state.json",
+  "reports_dir": "C:\\Users\\fael\\AppData\\Local\\Temp\\o0-v2-m5-work\\m5-resume-proof\\auditor-cancel\\interrupted\\reports",
+  "builder_workspace": "C:\\Users\\fael\\AppData\\Local\\Temp\\o0-v2-m5-work\\m5-resume-proof\\auditor-cancel\\repo",
+  "audit_workspaces": "C:\\Users\\fael\\AppData\\Local\\Temp\\o0-v2-m5-work\\m5-resume-proof\\auditor-cancel\\interrupted\\audit-workspaces",
+  "builder_command": [
+    "dummy"
+  ],
+  "auditor_command": [
+    "C:\\Python314\\python.exe",
+    "A:\\ideias_standard\\scripts\\o0_codex_adapter.py",
+    "--task",
+    "Audit calc.py and test_calc.py. PASS if all functions and tests are correct."
+  ],
+  "resume_interrupted": true
+}

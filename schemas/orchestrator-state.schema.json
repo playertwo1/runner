@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ideias-standard.local/schemas/orchestrator-state.schema.json",
+  "title": "Ideias Standard Orchestrator State",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "run_id", "project_id", "phase", "gate", "machine_state", "next_actor", "blocked_reason", "builder_branch", "builder_executor_id", "auditor_executor_id", "product_authority_id", "builder_head_sha", "audit_target_sha", "last_audited_sha", "audit_round", "max_audit_rounds", "last_builder_report", "last_audit_report", "last_audit_result", "human_gate_required", "approval", "updated_at", "message"],
+  "properties": {
+    "schema_version": {"type": "string", "const": "0.1"},
+    "run_id": {"type": "string", "pattern": "^run-[0-9a-f]{64}$"},
+    "project_id": {"type": "string", "minLength": 1},
+    "phase": {"type": "string", "minLength": 1},
+    "gate": {"type": "string", "minLength": 1},
+    "machine_state": {"enum": ["READY_FOR_BUILD", "READY_FOR_AUDIT", "AUDITING", "FIX_REQUIRED", "WAITING_PRODUCT_AUTHORITY", "GATE_APPROVED", "BLOCKED"]},
+    "next_actor": {"enum": ["BUILDER", "AUDITOR", "PRODUCT_AUTHORITY", "STOP"]},
+    "blocked_reason": {"anyOf": [{"type": "null"}, {"$ref": "#/$defs/blockedReason"}]},
+    "builder_branch": {"type": "string", "minLength": 1},
+    "builder_executor_id": {"type": ["string", "null"], "minLength": 1},
+    "auditor_executor_id": {"type": ["string", "null"], "minLength": 1},
+    "product_authority_id": {"type": "string", "minLength": 1},
+    "builder_head_sha": {"anyOf": [{"type": "null"}, {"type": "string", "pattern": "^[0-9a-f]{40}$"}]},
+    "audit_target_sha": {"anyOf": [{"type": "null"}, {"type": "string", "pattern": "^[0-9a-f]{40}$"}]},
+    "last_audited_sha": {"anyOf": [{"type": "null"}, {"type": "string", "pattern": "^[0-9a-f]{40}$"}]},
+    "audit_round": {"type": "integer", "minimum": 0},
+    "max_audit_rounds": {"type": "integer", "minimum": 1, "maximum": 10},
+    "last_builder_report": {"type": ["string", "null"]},
+    "last_audit_report": {"type": ["string", "null"]},
+    "last_audit_report_sha256": {"type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"},
+    "last_audit_result": {"anyOf": [{"type": "null"}, {"enum": ["PASS", "FAIL", "ESCALATE"]}]},
+    "human_gate_required": {"type": "boolean", "const": true},
+    "approval": {"anyOf": [{"type": "null"}, {"$ref": "#/$defs/approval"}]},
+    "updated_at": {"type": "string", "minLength": 1},
+    "message": {"type": "string"}
+  },
+  "$defs": {
+    "blockedReason": {
+      "oneOf": [
+        {"type": "object", "additionalProperties": false, "required": ["code", "source", "evidence_ref"], "properties": {"code": {"const": "AUDITOR_ESCALATED"}, "source": {"const": "AUDITOR"}, "evidence_ref": {"const": "last_audit_report"}}},
+        {"type": "object", "additionalProperties": false, "required": ["code", "source", "evidence_ref"], "properties": {"code": {"const": "BUILDER_DISPUTED"}, "source": {"const": "BUILDER"}, "evidence_ref": {"const": "last_builder_report"}}},
+        {"type": "object", "additionalProperties": false, "required": ["code", "source", "evidence_ref"], "properties": {"code": {"const": "AUDIT_ROUND_LIMIT_REACHED"}, "source": {"const": "ORCHESTRATOR"}, "evidence_ref": {"const": "orchestrator_state"}}},
+        {"type": "object", "additionalProperties": false, "required": ["code", "source", "evidence_ref"], "properties": {"code": {"const": "BUILDER_BLOCKED"}, "source": {"const": "BUILDER"}, "evidence_ref": {"const": "last_builder_report"}}}
+      ]
+    },
+    "approval": {"type": "object", "additionalProperties": false, "required": ["executor_id", "role", "authority", "gate", "audited_sha", "approved_at"], "properties": {"executor_id": {"type": "string", "minLength": 1}, "role": {"type": "string", "const": "PRODUCT_AUTHORITY"}, "authority": {"type": "string", "const": "GATE_APPROVAL"}, "gate": {"type": "string", "minLength": 1}, "audited_sha": {"type": "string", "pattern": "^[0-9a-f]{40}$"}, "approved_at": {"type": "string", "minLength": 1}}}
+  }
+}

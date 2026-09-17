@@ -1,0 +1,1 @@
+{"audit_round":1,"audit_target_sha":"8cf01e56bbd82e86d021d2d671e4474d1c1880e2","content":"Inspected calc.py and verified subtract(a, b) returns a - b.","evidence_id":"r1-audit-check-71bde36ba02917f2","run_id":"run-65f08ff607c9d916afe60b94bb392be048fa5070d3e54cf01c58abad1c9b7d0e","schema_version":"0.1"}
