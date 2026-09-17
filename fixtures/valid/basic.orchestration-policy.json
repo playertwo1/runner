@@ -1,0 +1,13 @@
+{
+  "schema_version": "0.1",
+  "id": "builder-auditor-loop",
+  "builder_role_id": "builder",
+  "auditor_role_id": "auditor",
+  "product_authority_id": "product-authority",
+  "max_audit_rounds": 3,
+  "immutable_audit_target": true,
+  "auditor_write_access": false,
+  "human_gate_required": true,
+  "auto_advance_after_audit": false,
+  "persist_handoffs": true
+}

@@ -1,0 +1,14 @@
+{
+  "schema_version": "0.1",
+  "executor_id": "builder-executor",
+  "role": "BUILDER",
+  "authority": "IMPLEMENTATION",
+  "result_sha": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "result": "READY_FOR_AUDIT",
+  "summary": "Mudança concluída dentro do escopo autorizado.",
+  "changed_paths": ["src/example.txt"],
+  "checks": [{"id": "unit", "status": "PASS", "evidence": {"evidence_id": "builder-unit", "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"}}],
+  "limitations": [],
+  "disputed_findings": [],
+  "escalation": null
+}

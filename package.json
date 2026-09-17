@@ -1,0 +1,11 @@
+{
+  "name": "ideias-standard-runner",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "O0 Builder-Auditor runner and queue tests",
+  "scripts": {
+    "test": "node --import ./test-preload.mjs --test",
+    "test:m4": "python -m unittest scripts.test_o0_queue",
+    "self-check": "python scripts/validate_standard.py --self-check"
+  }
+}
